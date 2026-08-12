@@ -609,21 +609,21 @@ main {
     }
 }
 
-/* What is Spin Crush */
-.about {
+/* Games */
+.games {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3rem 1.25rem 2rem;
 }
 
-.about__heading {
+.games__heading {
     font-size: clamp(1.25rem, 3vw, 1.75rem);
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: 1rem;
 }
 
-.about__intro {
+.games__intro {
     color: var(--color-text-muted);
     font-size: 1rem;
     line-height: 1.7;
@@ -631,7 +631,7 @@ main {
     margin-bottom: 2.5rem;
 }
 
-.about__features {
+.games__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -639,136 +639,47 @@ main {
 }
 
 @media (min-width: 640px) {
-    .about__features {
+    .games__grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-.about__feature {
-    position: relative;
+.games__card {
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     padding: 1.5rem;
 }
 
-.about__feature::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 330deg,
-        #4ade80 330deg,
-        #4ade80 360deg
-    );
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-    opacity: 0.95;
-    animation: about-feature-border 9s linear infinite;
-    pointer-events: none;
-    will-change: transform;
-    z-index: 1;
-    transform-origin: center;
+.games__card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
-.about__feature::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    padding: 1px;
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 330deg,
-        var(--color-accent) 330deg,
-        var(--color-accent) 360deg
-    );
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-    opacity: 0.35;
-    animation: about-feature-border 9s linear infinite;
-    pointer-events: none;
-    will-change: transform;
-    z-index: 0;
-    filter: blur(1px);
-    transform-origin: center;
-}
-
-.about__feature:hover::before {
-    opacity: 1;
-}
-
-.about__feature:hover::after {
-    opacity: 0.5;
-}
-
-@keyframes about-feature-border {
-    to { transform: rotate(360deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .about__feature::before,
-    .about__feature::after {
-        animation: none;
-        opacity: 0.45;
-    }
-
-    .about__feature::after {
-        filter: none;
-    }
-
-    .about__feature {
-        border-color: rgba(22, 163, 74, 0.35);
-    }
-
-    .carousel__slide {
-        transition: none;
-    }
-
-    .carousel__cta {
-        transition: none;
-    }
-
-    .carousel__control {
-        transition: none;
-    }
-
-    .carousel__indicator {
-        transition: none;
-    }
-}
-
-.about__feature-title {
+.games__card-title {
     font-size: 1rem;
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
 }
 
-.about__feature-text {
+.games__card-text {
     font-size: 0.9375rem;
     color: var(--color-text-muted);
     line-height: 1.6;
-    position: relative;
-    z-index: 1;
 }
 
-.about__cta {
+.games__cta {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
 
-.about__cta-link {
+.games__cta-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -782,18 +693,254 @@ main {
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.about__cta-link:hover {
+.games__cta-link:hover {
     background-color: var(--color-accent-hover);
     transform: translateY(-1px);
 }
 
-.about__cta-link--secondary {
-    background-color: transparent;
-    color: var(--color-text);
-    border: 1px solid var(--color-border);
+/* Promotions */
+.promotions {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 2rem;
 }
 
-.about__cta-link--secondary:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+.promotions__heading {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.promotions__intro {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 720px;
+    margin-bottom: 2.5rem;
+}
+
+.promotions__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.promotions__cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.promotions__cta-link:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+/* APK */
+.apk {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 2rem;
+}
+
+.apk__content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.apk__heading {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.apk__intro {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.apk__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.apk__cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.apk__cta-link:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+/* APK Info */
+.apk-info {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 2rem;
+}
+
+.apk-info__content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.apk-info__heading {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+}
+
+.apk-info__intro {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+}
+
+.apk-info__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.apk-info__cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.apk-info__cta-link:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+/* FAQ */
+.faq {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 2rem;
+}
+
+.faq__content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.faq__heading {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+}
+
+.faq__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.faq__item {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+}
+
+.faq__question {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.faq__question::after {
+    content: '+';
+    font-size: 1.25rem;
     color: var(--color-accent);
+    font-weight: 400;
+}
+
+.faq__item[open] .faq__question::after {
+    content: '−';
+}
+
+.faq__answer {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.faq__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.faq__cta-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.faq__cta-link:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
 }

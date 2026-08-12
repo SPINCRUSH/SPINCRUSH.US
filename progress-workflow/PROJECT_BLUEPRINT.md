@@ -255,3 +255,437 @@ Do not create these pages until their development phase.
   - Whether the demo can naturally support the APK conversion flow
 - **NOT done:** No demo games, iframes, UI, `/games/` page, navbar entries, or
   promotional claims have been added.
+
+## FUTURE GAMES CONTENT ARCHITECTURE — REVISED
+
+STATUS:
+PLANNED / FUTURE — NOT IMPLEMENTED.
+
+The `/games/` page will serve as the main Spin Crush Games Collection / Games Hub.
+
+The Games Hub should contain ALL verified and available game categories, not only the categories currently highlighted on the homepage.
+
+The homepage currently highlights representative categories:
+
+- Slots
+- Casino Games
+- Rummy
+
+These are NOT the complete or final list of Spin Crush game categories.
+
+The `/games/` architecture must remain expandable based on the actual verified Spin Crush game inventory.
+
+Conceptual structure:
+
+/games/
+    ├── Slots
+    ├── Casino Games
+    ├── Rummy
+    ├── Other verified game categories
+    └── ...
+
+==================================================
+
+GAME CATEGORY PAGES
+
+==================================================
+
+When a game category has sufficient verified content and meaningful user/search intent, it may receive its own category page.
+
+Preferred URL pattern:
+
+`/games/{category}/`
+
+Examples:
+
+`/games/slots/`
+`/games/rummy/`
+`/games/casino/`
+
+Additional categories may be added later when verified.
+
+Do NOT assume that every future game category automatically requires its own page.
+
+Do NOT create category pages until the actual game inventory/content has been verified.
+
+==================================================
+
+ONE-PAGE CATEGORY CONTENT MODEL
+
+==================================================
+
+IMPORTANT ARCHITECTURE DECISION:
+
+Do NOT create separate `how-to-play`, `guide`, `features`, `game-types`, or similar subpages by default.
+
+Instead, each major game category should ideally have ONE concise category page that summarizes the important information in a structured and scannable way.
+
+Example:
+
+`/games/slots/`
+
+may contain:
+
+1. Introduction
+   - What are Slots?
+   - Short explanation of the category
+
+2. How Slots Work
+   - Brief general explanation of gameplay
+
+3. Types of Slots
+   - Short explanation of relevant slot formats/types
+
+4. Slot Features
+   - Brief explanation of relevant mechanics/features
+
+5. Available Slot Games
+   - Selected/verified game examples where applicable
+
+6. Short educational/gameplay information
+   - Only what is useful to users
+   - Avoid unnecessary long-form content
+
+7. APK CTA
+   - Guide users toward the Spin Crush APK where appropriate
+
+The same general content model can be adapted to other categories.
+
+Example:
+
+`/games/rummy/`
+
+may cover:
+- What is Rummy?
+- How Rummy works
+- Relevant Rummy variations
+- Basic gameplay concepts
+- Available/verified Rummy games
+- Short educational information
+- APK CTA
+
+Example:
+
+`/games/casino/`
+
+may cover:
+- What are Casino Games?
+- General explanation
+- Relevant casino game types
+- Short explanations of individual game types
+- Available/verified games
+- Basic gameplay information
+- APK CTA
+
+==================================================
+
+CONTENT LENGTH PRINCIPLE
+
+==================================================
+
+Category pages should NOT become long-form articles by default.
+
+The goal is:
+
+"One page that summarizes the category clearly."
+
+Content should be:
+- concise
+- scannable
+- useful
+- structured with clear sections
+- easy to understand on mobile
+- focused on user discovery
+
+Avoid unnecessarily long explanations.
+
+If a category can be explained effectively in several short sections, do not split it into multiple URLs.
+
+==================================================
+
+HOW-TO / GUIDE URL POLICY
+
+==================================================
+
+Do NOT create:
+
+`/games/{category}/how-to-play/`
+
+by default.
+
+Do NOT create:
+
+`/games/{category}/guide/`
+
+by default.
+
+Do NOT create multiple educational subpages simply to separate basic category information.
+
+The preferred architecture is to keep basic:
+- how it works
+- how to play
+- game types
+- mechanics
+- features
+
+inside the main category page:
+
+`/games/{category}/`
+
+A dedicated educational subpage should only be considered later if there is a strong, verified reason such as:
+- substantial unique educational content
+- clearly different search intent
+- significant content depth
+- genuine user need
+- SEO justification
+
+This must be decided individually rather than automatically.
+
+If a dedicated educational page is ever justified in the future, use:
+
+`/games/{category}/how-to-play/`
+
+as the preferred naming convention.
+
+Do NOT create both `/guide/` and `/how-to-play/` for the same intent.
+
+==================================================
+
+CONTENT VERIFICATION
+
+==================================================
+
+Before publishing category-specific information, verify:
+
+- Actual game categories
+- Actual game titles
+- Available game mechanics
+- Available features
+- Available variations
+- Whether games are actually available through Spin Crush
+- Licensing/permission where relevant
+- Whether game/demo content can be displayed
+- Accuracy of gameplay information
+
+Do not present generic game mechanics as confirmed Spin Crush features unless verified.
+
+Do not invent game titles, features, bonuses, payment methods, or availability claims.
+
+==================================================
+
+FUTURE INTERNAL LINKING
+
+==================================================
+
+The intended hierarchy is:
+
+Homepage
+    ↓
+/games/
+    ↓
+/games/{category}/
+    ↓
+APK conversion
+
+Example:
+
+Homepage
+→ Explore Spin Crush Games
+→ `/games/`
+
+`/games/`
+→ Slots
+→ `/games/slots/`
+
+`/games/slots/`
+→ Download Spin Crush APK
+→ `/spin-crush-apk/`
+
+The Games content should support discovery and understanding while the primary site conversion goal remains APK download.
+
+==================================================
+
+ARCHITECTURE PRINCIPLE
+
+==================================================
+
+The future Games content architecture should prioritize:
+
+ONE CATEGORY = ONE COMPREHENSIVE BUT CONCISE PAGE
+
+rather than:
+
+ONE CATEGORY = MANY SMALL EDUCATIONAL PAGES
+
+The goal is to avoid unnecessary URL proliferation, duplicated content, thin pages, and excessive maintenance.
+
+Only create additional subpages when there is a strong content, user-intent, or SEO justification.
+
+==================================================
+
+END FUTURE GAMES CONTENT ARCHITECTURE
+
+==================================================
+
+PROMO CODE FEATURE
+
+==================================================
+
+STATUS:
+PLANNED / FUTURE — NOT IMPLEMENTED.
+
+SPIN CRUSH will have a dedicated Promo Code feature.
+
+URL:
+
+`/promo-code/`
+
+The feature is related to Promotions but has its own dedicated page because it is an interactive promotional feature.
+
+Navbar:
+
+`Promo Code`
+
+The navbar item should point to:
+
+`/promo-code/`
+
+==================================================
+
+PROMOTIONAL PURPOSE
+
+==================================================
+
+The Promo Code feature is intended to allow users to generate a promotional code.
+
+Users may receive a bonus of up to:
+
+`₹200`
+
+Confirmed promotional positioning:
+
+"Generate a Promo Code and get a bonus of up to ₹200."
+
+IMPORTANT:
+The final public-facing wording may be refined later after the actual promotional mechanics are verified.
+
+Do NOT claim:
+- guaranteed ₹200
+- unlimited promo codes
+- guaranteed eligibility
+- guaranteed redemption
+- specific expiry dates
+- specific wagering requirements
+- specific minimum deposits
+- specific payment requirements
+- any other conditions that have not yet been verified
+
+==================================================
+
+ARCHITECTURE
+
+==================================================
+
+Keep these two concepts separate:
+
+`/promotions/`
+
+Purpose:
+Promotional content hub.
+
+`/promo-code/`
+
+Purpose:
+Dedicated Promo Code generation feature.
+
+The Promotions page may introduce and link to the Promo Code feature.
+
+The Promo Code page will contain the actual generation functionality when implemented.
+
+==================================================
+
+PAGE ARCHITECTURE
+
+==================================================
+
+Record:
+
+`/promo-code/`
+
+as a planned core feature/page.
+
+Do NOT create:
+
+- `/promo-code/generate/`
+- `/promo-code/how-to/`
+- `/promo-code/guide/`
+- other Promo Code subpages
+
+unless a future requirement explicitly requires them.
+
+==================================================
+
+RELATIONSHIP TO HOMEPAGE
+
+==================================================
+
+Homepage:
+
+Promotions
+↓
+APK Conversion
+↓
+APK Information
+↓
+FAQ
+
+The homepage does not need to contain the Promo Code generator.
+
+The homepage may later contain a promotional teaser or CTA linking to:
+
+`/promo-code/`
+
+if this is determined to improve the conversion flow.
+
+==================================================
+
+ASSET
+
+==================================================
+
+The project currently contains:
+
+`assets/images/banners/promo-code.webp`
+
+This asset is currently untracked.
+
+Record its existence, but do NOT mark it as a required Promo Code UI asset until its final usage is decided.
+
+Do NOT modify the image.
+
+==================================================
+
+FUTURE IMPLEMENTATION
+
+==================================================
+
+The Promo Code generator is planned but is NOT implemented yet.
+
+Future implementation may require:
+
+- JavaScript
+- Promo code generation logic
+- User interaction
+- Validation
+- Promotional rules
+
+Do NOT assume the implementation method yet.
+
+Do NOT create the generator during this documentation task.
+
+==================================================
+
+END PROMO CODE FEATURE
+
+==================================================
+
