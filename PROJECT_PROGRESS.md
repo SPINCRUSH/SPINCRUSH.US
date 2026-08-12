@@ -87,10 +87,10 @@ Footer:
 - [x] Final verification — audit completed, issues fixed, Phase 02 LOCKED
 
 ### Phase 03 — Homepage
-**Status:** NOT STARTED
+**Status:** IN PROGRESS
 
 Planned order:
-- [ ] Promotional 16:9 carousel
+- [x] Promotional 16:9 carousel
 - [ ] Hero / main introduction
 - [ ] Games section
 - [ ] Promotions section
@@ -242,10 +242,9 @@ SPINCRUSH.US/
 - Global header (navbar)
 - Floating language switcher
 - Global footer
-- Empty `<main>` with placeholder comment for future carousel
+- Promotional 16:9 carousel inside `<main>`
 
 ### Not Implemented
-- Promotional 16:9 carousel
 - Hero / main introduction section
 - Games section
 - Promotions section
@@ -389,3 +388,4 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-12 | Created /progress-workflow/ documentation system | PROJECT_PROGRESS.md, progress-workflow/*.md | Phase 02 — Global UI (IN PROGRESS) | Complete Phase 02 verification, then begin Phase 03 Homepage carousel |
 | 2026-08-12 | Phase 02 final verification audit completed | PROJECT_PROGRESS.md | Phase 02 — Global UI (IN PROGRESS, audit done, needs fixes before lock) | Review audit findings, implement fixes, then lock Phase 02 |
 | 2026-08-12 | Phase 02 fixes completed and LOCKED | index.html, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Phase 02 — Global UI (COMPLETE / LOCKED) | Phase 03 — Homepage (promotional 16:9 carousel) |
+| 2026-08-12 | Built Phase 03 promotional 16:9 carousel | index.html, assets/css/style.css, assets/js/script.js | Phase 03 — Homepage (IN PROGRESS) | Plan/build next homepage section |
