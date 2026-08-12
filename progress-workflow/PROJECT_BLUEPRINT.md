@@ -91,7 +91,6 @@ This wording may be refined later.
 
 ### Help
 - How to Install
-- FAQ
 - Download Help
 - Contact Us
 
@@ -133,7 +132,6 @@ Do not add payment UI yet.
 
 ### Support
 - `/install/`
-- `/faq/`
 - `/download-help/`
 - `/contact/`
 
@@ -180,7 +178,6 @@ Do not create these pages until their development phase.
 
 ### Phase 05 — Support
 - How to Install
-- FAQ
 - Download Help
 - Contact Us
 
@@ -636,8 +633,6 @@ Promotions
 APK Conversion
 ↓
 APK Information
-↓
-FAQ
 
 The homepage does not need to contain the Promo Code generator.
 

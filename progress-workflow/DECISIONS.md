@@ -25,7 +25,7 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
 - Future pages must **NOT** be implemented before their designated phase.
 - Unnecessary frameworks/libraries are **avoided**.
 - Site must remain **lightweight** and **mobile-first**.
-- Internal URLs use the **trailing-slash convention** (e.g., `/games/`, `/promotions/`, `/help/`, `/install/`, `/faq/`, `/download-help/`, `/contact/`, `/privacy/`, `/terms/`, `/disclaimer/`).
+- Internal URLs use the **trailing-slash convention** (e.g., `/games/`, `/promotions/`, `/help/`, `/install/`, `/download-help/`, `/contact/`, `/privacy/`, `/terms/`, `/disclaimer/`).
 
 ---
 
@@ -39,7 +39,6 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
   - USDT
 - Planned support pages:
   - `/install/`
-  - `/faq/`
   - `/download-help/`
   - `/contact/`
 - Planned legal pages:
