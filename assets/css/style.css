@@ -610,10 +610,69 @@ main {
 }
 
 .about__feature {
+    position: relative;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     padding: 1.5rem;
+    overflow: hidden;
+}
+
+.about__feature::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 355deg,
+        var(--color-accent) 358deg,
+        transparent 360deg
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0.3;
+    animation: about-feature-border 12s linear infinite;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.about__feature:hover::before {
+    opacity: 0.55;
+}
+
+@keyframes about-feature-border {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about__feature::before {
+        animation: none;
+        opacity: 0.12;
+    }
+
+    .about__feature {
+        border-color: rgba(22, 163, 74, 0.25);
+    }
+
+    .carousel__slide {
+        transition: none;
+    }
+
+    .carousel__cta {
+        transition: none;
+    }
+
+    .carousel__control {
+        transition: none;
+    }
+
+    .carousel__indicator {
+        transition: none;
+    }
 }
 
 .about__feature-title {

@@ -94,6 +94,7 @@ Planned order:
 - [x] Hero / main introduction
 - [x] Homepage H1
 - [x] Homepage opening refinement
+- [x] Animated green card border prototype
 - [ ] Games section
 - [ ] Promotions section
 - [ ] Spin Crush APK section
@@ -250,6 +251,7 @@ SPINCRUSH.US/
 - Homepage H1 below carousel: "SPIN CRUSH — Gaming Platform for India" (single H1; no headings inside carousel)
 - Homepage intro paragraph below H1
 - "What is Spin Crush?" introduction section (H2 heading + H3 feature headings)
+- Animated green card border prototype: subtle traveling green highlight on feature cards, hover increases opacity, reduced-motion fallback to static green border
 - Carousel functionality unchanged (controls, indicators, autoplay, hover/focus pause, keyboard, swipe, reduced-motion)
 
 ### Not Implemented
@@ -402,3 +404,4 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-12 | Built Phase 03.2 "What is Spin Crush?" section | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review section visually before next homepage component |
 | 2026-08-12 | Added homepage H1 above carousel | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review heading hierarchy before next homepage section |
 | 2026-08-12 | Refined Phase 03 homepage opening structure | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Audit homepage opening visually and semantically before next section |
+| 2026-08-12 | Prototyped animated green card borders | assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Evaluate animated border visual treatment |
