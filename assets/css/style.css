@@ -366,6 +366,18 @@ main {
     padding-top: 0.5rem;
 }
 
+/* Homepage title */
+.homepage-title {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.25rem 1.25rem 0.75rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+    text-align: center;
+}
+
 /* Carousel */
 .carousel {
     position: relative;

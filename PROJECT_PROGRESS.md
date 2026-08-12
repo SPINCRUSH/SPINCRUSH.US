@@ -92,6 +92,7 @@ Footer:
 Planned order:
 - [x] Promotional 16:9 carousel
 - [x] Hero / main introduction
+- [x] Homepage H1
 - [ ] Games section
 - [ ] Promotions section
 - [ ] Spin Crush APK section
@@ -244,6 +245,7 @@ SPINCRUSH.US/
 - Global footer
 - Promotional 16:9 carousel inside `<main>`
 - "What is Spin Crush?" introduction section
+- Homepage H1 above carousel: "SPIN CRUSH — Gaming Platform for India"
 
 ### Not Implemented
 - Games section
@@ -393,3 +395,4 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-12 | Built Phase 03 promotional 16:9 carousel | index.html, assets/css/style.css, assets/js/script.js | Phase 03 — Homepage (IN PROGRESS) | Plan/build next homepage section |
 | 2026-08-12 | Integrated real carousel banner assets | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review carousel visually before next homepage section |
 | 2026-08-12 | Built Phase 03.2 "What is Spin Crush?" section | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review section visually before next homepage component |
+| 2026-08-12 | Added homepage H1 above carousel | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review heading hierarchy before next homepage section |
