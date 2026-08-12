@@ -637,27 +637,28 @@ main {
 .about__feature::before {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -1px;
     border-radius: inherit;
     padding: 1px;
     background: conic-gradient(
         from 0deg,
         transparent 0deg,
-        transparent 355deg,
-        var(--color-accent) 358deg,
-        transparent 360deg
+        transparent 330deg,
+        var(--color-accent) 345deg,
+        var(--color-accent) 360deg
     );
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     -webkit-mask-composite: xor;
-    opacity: 0.3;
-    animation: about-feature-border 12s linear infinite;
+    opacity: 0.7;
+    animation: about-feature-border 9s linear infinite;
     pointer-events: none;
     will-change: transform;
+    z-index: 0;
 }
 
 .about__feature:hover::before {
-    opacity: 0.55;
+    opacity: 0.85;
 }
 
 @keyframes about-feature-border {
@@ -696,12 +697,16 @@ main {
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .about__feature-text {
     font-size: 0.9375rem;
     color: var(--color-text-muted);
     line-height: 1.6;
+    position: relative;
+    z-index: 1;
 }
 
 .about__cta {
