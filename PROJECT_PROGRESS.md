@@ -373,6 +373,18 @@ Review audit findings. If approved, implement the 4 NEEDS FIX items, then LOCK P
 
 ---
 
+## Future / Potential Features (Backlog)
+
+### Demo Slots / Demo Games
+
+- **STATUS:** POTENTIAL / FUTURE — NOT confirmed. Not implemented.
+- Recorded in the future-feature backlog only.
+- See `progress-workflow/PROJECT_BLUEPRINT.md` → "FUTURE / POTENTIAL FEATURES" for full details.
+- **NOT done:** No demo games, iframes, UI, `/games/` page, navbar entries, homepage section, or promotional claims have been added. Implementation is gated on verifying provider, licensing, embedding permission, demo source, mobile compatibility, performance, security, UX, and the APK conversion flow.
+- **Primary conversion goal (unchanged):** APK download.
+
+---
+
 ## Decisions Log
 
 - Brand display name is "Spin Crush".
