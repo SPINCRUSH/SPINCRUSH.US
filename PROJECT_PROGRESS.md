@@ -252,7 +252,7 @@ SPINCRUSH.US/
 - Homepage H1 below carousel: "SPIN CRUSH — Gaming Platform for India" (single H1; no headings inside carousel)
 - Homepage intro paragraph below H1
 - "What is Spin Crush?" introduction section (H2 heading + H3 feature headings)
-- Animated green card border refined: corrected border positioning to card perimeter, widened conic-gradient arc to 30 degrees, increased opacity (0.7 normal / 0.85 hover), adjusted animation duration to 9s, added restrained perimeter glow with secondary pseudo-element, preserved reduced-motion fallback
+- Animated green card border visually fixed: removed `overflow: hidden` that clipped the traveling highlight to card perimeter, widened conic-gradient arc to 30 degrees, brightened highlight to `#4ade80` at 0.95 opacity, added restrained perimeter glow (`::after` at 0.35 opacity with 1px blur), hover increases both opacities, animation runs 9s linear infinite, reduced-motion shows static green outline with no glow
 - Mobile navbar persistent Download APK CTA: visible outside hamburger on mobile, links to `/spin-crush-apk/`
 - Carousel interaction refined: banners are clickable, controls and indicators remain independent, responsive/accessibility verified
 
