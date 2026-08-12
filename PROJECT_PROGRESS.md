@@ -248,13 +248,13 @@ SPINCRUSH.US/
 - Global footer
 - Promotional 16:9 carousel inside `<main>`
 - Carousel semantic refinement: visual labels instead of headings, descriptions removed
-- Carousel CTAs: text "View Bonus", destination `/promotions/`
+- Carousel visible CTA buttons removed; promotional banners made clickable and link to `/promotions/`
 - Homepage H1 below carousel: "SPIN CRUSH — Gaming Platform for India" (single H1; no headings inside carousel)
 - Homepage intro paragraph below H1
 - "What is Spin Crush?" introduction section (H2 heading + H3 feature headings)
 - Animated green card border refined: corrected border positioning to card perimeter, widened conic-gradient arc to 30 degrees, increased opacity (0.7 normal / 0.85 hover), adjusted animation duration to 9s, added restrained perimeter glow with secondary pseudo-element, preserved reduced-motion fallback
 - Mobile navbar persistent Download APK CTA: visible outside hamburger on mobile, links to `/spin-crush-apk/`
-- Carousel functionality unchanged (controls, indicators, autoplay, hover/focus pause, keyboard, swipe, reduced-motion)
+- Carousel interaction refined: banners are clickable, controls and indicators remain independent, responsive/accessibility verified
 
 ### Not Implemented
 - Games section

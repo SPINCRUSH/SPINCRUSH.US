@@ -455,6 +455,25 @@ main {
     background: linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.55) 55%, transparent 100%);
 }
 
+.carousel__slide-link {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    text-decoration: none;
+    color: inherit;
+    border-radius: inherit;
+}
+
+.carousel__slide-link:hover {
+    filter: brightness(1.05);
+}
+
+.carousel__slide-link:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 2px var(--color-accent);
+}
+
 .carousel__label {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 600;
