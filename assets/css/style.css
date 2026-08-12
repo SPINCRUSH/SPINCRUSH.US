@@ -398,26 +398,15 @@ main {
     z-index: 1;
 }
 
-.carousel__slide-bg {
+.carousel__slide-img {
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
-}
-
-.carousel__slide:nth-child(1) .carousel__slide-bg {
-    background: radial-gradient(circle at 20% 30%, rgba(22, 163, 74, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
-}
-
-.carousel__slide:nth-child(2) .carousel__slide-bg {
-    background: radial-gradient(circle at 80% 70%, rgba(22, 163, 74, 0.06) 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
-}
-
-.carousel__slide:nth-child(3) .carousel__slide-bg {
-    background: radial-gradient(circle at 50% 50%, rgba(22, 163, 74, 0.12) 0%, transparent 50%),
-                linear-gradient(135deg, #0a0a0a 0%, #141414 50%, #0a0a0a 100%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .carousel__slide-content {
@@ -425,7 +414,7 @@ main {
     z-index: 1;
     width: 100%;
     padding: 2rem;
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.6) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(10, 10, 10, 0.92) 0%, rgba(10, 10, 10, 0.55) 55%, transparent 100%);
 }
 
 .carousel__title {

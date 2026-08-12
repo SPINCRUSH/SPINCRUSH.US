@@ -294,7 +294,9 @@ SPINCRUSH.US/
 - `assets/images/flag/india.svg` (language switcher — HI, disabled)
 
 ### Banners
-- `assets/images/banners/` (directory exists, no files yet)
+- `assets/images/banners/carousel/jackpot-lotto.webp`
+- `assets/images/banners/carousel/mystery-bonus.webp`
+- `assets/images/banners/carousel/refer-and-earn.webp`
 
 ---
 
@@ -389,3 +391,4 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-12 | Phase 02 final verification audit completed | PROJECT_PROGRESS.md | Phase 02 — Global UI (IN PROGRESS, audit done, needs fixes before lock) | Review audit findings, implement fixes, then lock Phase 02 |
 | 2026-08-12 | Phase 02 fixes completed and LOCKED | index.html, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Phase 02 — Global UI (COMPLETE / LOCKED) | Phase 03 — Homepage (promotional 16:9 carousel) |
 | 2026-08-12 | Built Phase 03 promotional 16:9 carousel | index.html, assets/css/style.css, assets/js/script.js | Phase 03 — Homepage (IN PROGRESS) | Plan/build next homepage section |
+| 2026-08-12 | Integrated real carousel banner assets | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review carousel visually before next homepage section |
