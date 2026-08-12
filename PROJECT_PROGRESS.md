@@ -91,7 +91,7 @@ Footer:
 
 Planned order:
 - [x] Promotional 16:9 carousel
-- [ ] Hero / main introduction
+- [x] Hero / main introduction
 - [ ] Games section
 - [ ] Promotions section
 - [ ] Spin Crush APK section
@@ -243,9 +243,9 @@ SPINCRUSH.US/
 - Floating language switcher
 - Global footer
 - Promotional 16:9 carousel inside `<main>`
+- "What is Spin Crush?" introduction section
 
 ### Not Implemented
-- Hero / main introduction section
 - Games section
 - Promotions section
 - Spin Crush APK section
@@ -392,3 +392,4 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-12 | Phase 02 fixes completed and LOCKED | index.html, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Phase 02 — Global UI (COMPLETE / LOCKED) | Phase 03 — Homepage (promotional 16:9 carousel) |
 | 2026-08-12 | Built Phase 03 promotional 16:9 carousel | index.html, assets/css/style.css, assets/js/script.js | Phase 03 — Homepage (IN PROGRESS) | Plan/build next homepage section |
 | 2026-08-12 | Integrated real carousel banner assets | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review carousel visually before next homepage section |
+| 2026-08-12 | Built Phase 03.2 "What is Spin Crush?" section | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review section visually before next homepage component |
