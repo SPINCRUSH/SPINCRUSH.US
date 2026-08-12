@@ -65,7 +65,7 @@ Header:
 - [x] Home
 - [x] Games
 - [x] Promotions
-- [ ] APK
+- [x] APK
 - [x] Help
 - [x] Download APK CTA
 - [x] Mobile menu
@@ -84,7 +84,7 @@ Footer:
 - [x] Explore column
 - [x] Help column
 - [x] Legal column
-- [ ] Final verification
+- [x] Final verification — audit completed, findings recorded below
 
 ### Phase 03 — Homepage
 **Status:** NOT STARTED
@@ -214,7 +214,7 @@ SPINCRUSH.US/
 - Download APK CTA: `<a href="/download">` styled as green pill button.
 - Mobile menu: Hamburger toggle button (`.navbar__toggle`) toggles `.navbar__nav.is-open` via JavaScript.
 - Responsive: Menu visible on `min-width: 768px`, hidden (hamburger shown) below that.
-- **APK link status:** Present in markup but marked as incomplete in Phase 02.
+- **APK link status:** Implemented at `/spin-crush-apk/`.
 
 ### Language Switcher
 - Sticky positioning below navbar (`top: var(--navbar-height)`, `z-index: 99`).
@@ -298,6 +298,81 @@ SPINCRUSH.US/
 
 ---
 
+## Payment Methods — Planned
+
+The website should account for these payment methods in future relevant sections, such as the homepage, Spin Crush APK page, or Help/payment-related content:
+
+- UPI Payment
+- IMPS Bank Transfer
+- Crypto Payment
+- USDT
+
+**Note:** These are planned/recorded payment methods only. Availability is not confirmed. No payment method UI has been added yet.
+
+---
+
+## Phase 02 Final Verification Audit
+
+**Date:** 2026-08-12
+**Status:** COMPLETE — issues identified, NOT LOCKED
+
+### PASS
+- Navbar sticky behavior, order, labels, CTA, desktop/mobile behavior, accessibility attributes
+- Language switcher EN/HI labels, flags, active/disabled states, positioning, accessibility
+- Footer 4-column structure, brand description, legal links, responsive grid, copyright
+- Asset paths (logo, favicon, flags) — all referenced files exist
+- CSS responsive breakpoints, z-index hierarchy, sticky positioning, mobile menu behavior
+- JavaScript mobile menu toggle and aria-expanded updates
+- HTML semantic structure and accessibility attributes
+
+### NEEDS FIX
+1. **Footer Explore column contains "Bonus" link not in blueprint**
+   - File: `index.html`
+   - Issue: Footer has `/bonus/` link; PROJECT_BLUEPRINT.md does not list `/bonus/` in site architecture. DECISIONS.md states bonuses are contained on the Promotions page.
+   - Recommended fix: Remove "Bonus" link from footer Explore column.
+
+2. **Footer Explore APK label mismatch**
+   - File: `index.html`
+   - Issue: Footer shows "APK" but PROJECT_BLUEPRINT.md specifies "Spin Crush APK" for the Explore column.
+   - Recommended fix: Change "APK" text to "Spin Crush APK" in footer Explore.
+
+3. **URL trailing slash inconsistency**
+   - File: `index.html`
+   - Issue: Blueprint specifies trailing slashes (`/games/`, `/promotions/`, `/help/`, `/install/`, `/faq/`, `/download-help/`, `/contact/`), but navbar uses `/games`, `/promotions`, `/help` (no slash) and footer uses `/install`, `/faq`, `/download-help`, `/contact` (no slash).
+   - Recommended fix: Standardize to match blueprint trailing-slash convention, or update blueprint to match implementation.
+
+4. **Unused asset: `assets/images/branding/images.webp`**
+   - File: `assets/images/branding/images.webp`
+   - Issue: File exists but is not referenced in `index.html`.
+   - Recommended fix: Remove unused file, or use it where appropriate.
+
+5. **Progress tracking mismatch: APK link**
+   - File: `PROJECT_PROGRESS.md`
+   - Issue: Phase 02 checklist previously marked APK as `[ ]`, but implementation is present.
+   - Status: Updated to `[x]` in this audit.
+
+### INFORMATIONAL
+- `assets/images/branding/images.webp` exists but is unused.
+- `assets/images/banners/` directory exists but is empty (expected for Phase 02).
+- Homepage `<main>` contains only placeholder comment (expected for Phase 02).
+- No structured data, Open Graph, or advanced SEO yet (Phase 08).
+- Hindi `/hi/` pages do not exist yet (as planned).
+- No payment UI implemented yet (as planned).
+
+### OUT OF SCOPE
+- Homepage carousel (Phase 03)
+- Core pages: /games/, /promotions/, /spin-crush-apk/, /help/ (Phase 04)
+- Support pages (Phase 05)
+- Legal pages (Phase 06)
+- SEO implementation (Phase 08)
+- Hindi localization (Phase 09)
+- QA & Launch (Phase 10)
+
+### Recommended Next Step
+Review audit findings. If approved, implement the 4 NEEDS FIX items, then LOCK Phase 02 and proceed to Phase 03 — Homepage (starting with promotional 16:9 carousel).
+
+---
+
 ## Decisions Log
 
 - Brand display name is "Spin Crush".
@@ -321,3 +396,5 @@ SPINCRUSH.US/
 | Date | What Was Completed | Files Changed | Current Status | Next Step |
 |------|-------------------|---------------|----------------|-----------|
 | 2026-08-12 | PROJECT_PROGRESS.md created | PROJECT_PROGRESS.md | Phase 02 — Global UI (IN PROGRESS) | Complete Phase 02 verification, then begin Phase 03 Homepage carousel |
+| 2026-08-12 | Created /progress-workflow/ documentation system | PROJECT_PROGRESS.md, progress-workflow/*.md | Phase 02 — Global UI (IN PROGRESS) | Complete Phase 02 verification, then begin Phase 03 Homepage carousel |
+| 2026-08-12 | Phase 02 final verification audit completed | PROJECT_PROGRESS.md | Phase 02 — Global UI (IN PROGRESS, audit done, needs fixes before lock) | Review audit findings, implement fixes, then lock Phase 02 |
