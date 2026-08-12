@@ -1,0 +1,55 @@
+# SPINCRUSH.US — Decisions Log
+
+This file records confirmed decisions that should not be changed casually.
+For current progress, see `PROJECT_PROGRESS.md`.
+For long-term architecture, see `PROJECT_BLUEPRINT.md`.
+
+---
+
+## CONFIRMED DECISIONS
+
+- Visible brand name is **"SPIN CRUSH"**.
+- Domain is **SPINCRUSH.US**.
+- Target market is **India**.
+- Primary language is **English**.
+- Main conversion goal is **APK download**.
+- Primary APK URL is **`/spin-crush-apk/`**.
+- Navbar items: **Home, Games, Promotions, APK, Help**, plus **Download APK** CTA.
+- Global navbar and footer remain consistent across all pages.
+- Homepage promotional carousel belongs inside **homepage `<main>`**, not the global header.
+- Language switcher is **floating/sticky**, positioned below navbar and aligned right.
+- EN uses the **UK flag**.
+- HI uses the **India flag**.
+- Hindi pages must **NOT** be created yet.
+- Future pages must **NOT** be implemented before their designated phase.
+- Unnecessary frameworks/libraries are **avoided**.
+- Site must remain **lightweight** and **mobile-first**.
+- Internal URLs use the **trailing-slash convention** (e.g., `/games/`, `/promotions/`, `/help/`, `/install/`, `/faq/`, `/download-help/`, `/contact/`, `/privacy/`, `/terms/`, `/disclaimer/`).
+
+---
+
+## PLANNED REQUIREMENTS
+
+- Hindi localization will be added later at **`/hi/`**.
+- Planned payment methods (availability not confirmed):
+  - UPI Payment
+  - IMPS Bank Transfer
+  - Crypto Payment
+  - USDT
+- Planned support pages:
+  - `/install/`
+  - `/faq/`
+  - `/download-help/`
+  - `/contact/`
+- Planned legal pages:
+  - `/privacy/`
+  - `/terms/`
+  - `/disclaimer/`
+
+---
+
+## FUTURE IDEAS
+
+- YONO messaging concept ("You Only Need One") — possible brand messaging, not yet confirmed as official positioning.
+- DMCA page — only if a real requirement is identified later.
+- Additional homepage sections beyond the planned order in Phase 03.

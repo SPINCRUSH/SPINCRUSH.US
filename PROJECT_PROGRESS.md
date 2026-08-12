@@ -57,7 +57,7 @@ Tasks:
 - [x] Mobile-first foundation
 
 ### Phase 02 — Global UI
-**Status:** IN PROGRESS
+**Status:** COMPLETE / LOCKED
 
 Header:
 - [x] Sticky navbar
@@ -84,7 +84,7 @@ Footer:
 - [x] Explore column
 - [x] Help column
 - [x] Legal column
-- [x] Final verification — audit completed, findings recorded below
+- [x] Final verification — audit completed, issues fixed, Phase 02 LOCKED
 
 ### Phase 03 — Homepage
 **Status:** NOT STARTED
@@ -210,11 +210,12 @@ SPINCRUSH.US/
 ### Navbar
 - Sticky positioning implemented (`position: sticky; top: 0; z-index: 100`).
 - Logo: `<a href="/">` with `logo.webp` (32px height).
-- Navigation links: Home (`/`), Games (`/games`), Promotions (`/promotions`), APK (`/spin-crush-apk/`), Help (`/help`).
-- Download APK CTA: `<a href="/download">` styled as green pill button.
+- Navigation links: Home (`/`), Games (`/games/`), Promotions (`/promotions/`), APK (`/spin-crush-apk/`), Help (`/help/`).
+- Download APK CTA: `<a href="/spin-crush-apk/">` styled as green pill button.
 - Mobile menu: Hamburger toggle button (`.navbar__toggle`) toggles `.navbar__nav.is-open` via JavaScript.
 - Responsive: Menu visible on `min-width: 768px`, hidden (hamburger shown) below that.
 - **APK link status:** Implemented at `/spin-crush-apk/`.
+- **URL consistency:** All internal links use trailing-slash convention.
 
 ### Language Switcher
 - Sticky positioning below navbar (`top: var(--navbar-height)`, `z-index: 99`).
@@ -226,12 +227,12 @@ SPINCRUSH.US/
 ### Footer
 - Four-column grid layout (Brand, Explore, Help, Legal).
 - Brand column: Logo + description text.
-- Explore column: Home, Bonus, Games, Promotions, APK.
+- Explore column: Home, Games, Promotions, Spin Crush APK. (Bonus link removed.)
 - Help column: How to Install, FAQ, Download Help, Contact.
 - Legal column: Privacy Policy, Terms & Conditions, Disclaimer.
 - Bottom bar: Copyright notice "© 2026 SPINCRUSH.US".
 - Responsive: Single column on mobile, 2 columns at `min-width: 640px`, 4 columns at `min-width: 1024px`.
-- **Final verification:** Pending.
+- **Final verification:** Complete. Phase 02 LOCKED.
 
 ---
 
@@ -314,7 +315,7 @@ The website should account for these payment methods in future relevant sections
 ## Phase 02 Final Verification Audit
 
 **Date:** 2026-08-12
-**Status:** COMPLETE — issues identified, NOT LOCKED
+**Status:** COMPLETE — Phase 02 LOCKED
 
 ### PASS
 - Navbar sticky behavior, order, labels, CTA, desktop/mobile behavior, accessibility attributes
@@ -325,34 +326,14 @@ The website should account for these payment methods in future relevant sections
 - JavaScript mobile menu toggle and aria-expanded updates
 - HTML semantic structure and accessibility attributes
 
-### NEEDS FIX
-1. **Footer Explore column contains "Bonus" link not in blueprint**
-   - File: `index.html`
-   - Issue: Footer has `/bonus/` link; PROJECT_BLUEPRINT.md does not list `/bonus/` in site architecture. DECISIONS.md states bonuses are contained on the Promotions page.
-   - Recommended fix: Remove "Bonus" link from footer Explore column.
-
-2. **Footer Explore APK label mismatch**
-   - File: `index.html`
-   - Issue: Footer shows "APK" but PROJECT_BLUEPRINT.md specifies "Spin Crush APK" for the Explore column.
-   - Recommended fix: Change "APK" text to "Spin Crush APK" in footer Explore.
-
-3. **URL trailing slash inconsistency**
-   - File: `index.html`
-   - Issue: Blueprint specifies trailing slashes (`/games/`, `/promotions/`, `/help/`, `/install/`, `/faq/`, `/download-help/`, `/contact/`), but navbar uses `/games`, `/promotions`, `/help` (no slash) and footer uses `/install`, `/faq`, `/download-help`, `/contact` (no slash).
-   - Recommended fix: Standardize to match blueprint trailing-slash convention, or update blueprint to match implementation.
-
-4. **Unused asset: `assets/images/branding/images.webp`**
-   - File: `assets/images/branding/images.webp`
-   - Issue: File exists but is not referenced in `index.html`.
-   - Recommended fix: Remove unused file, or use it where appropriate.
-
-5. **Progress tracking mismatch: APK link**
-   - File: `PROJECT_PROGRESS.md`
-   - Issue: Phase 02 checklist previously marked APK as `[ ]`, but implementation is present.
-   - Status: Updated to `[x]` in this audit.
+### NEEDS FIX (all resolved)
+1. ~~Footer Explore column contains "Bonus" link not in blueprint~~ → **Removed**
+2. ~~Footer Explore APK label mismatch~~ → **Changed to "Spin Crush APK"**
+3. ~~URL trailing slash inconsistency~~ → **Standardized to trailing-slash convention across navbar and footer**
+4. ~~Unused asset: `assets/images/branding/images.webp`~~ → **Retained per confirmation; not deleted**
 
 ### INFORMATIONAL
-- `assets/images/branding/images.webp` exists but is unused.
+- `assets/images/branding/images.webp` exists and is retained for future use.
 - `assets/images/banners/` directory exists but is empty (expected for Phase 02).
 - Homepage `<main>` contains only placeholder comment (expected for Phase 02).
 - No structured data, Open Graph, or advanced SEO yet (Phase 08).
@@ -367,9 +348,6 @@ The website should account for these payment methods in future relevant sections
 - SEO implementation (Phase 08)
 - Hindi localization (Phase 09)
 - QA & Launch (Phase 10)
-
-### Recommended Next Step
-Review audit findings. If approved, implement the 4 NEEDS FIX items, then LOCK Phase 02 and proceed to Phase 03 — Homepage (starting with promotional 16:9 carousel).
 
 ---
 
@@ -410,3 +388,4 @@ Review audit findings. If approved, implement the 4 NEEDS FIX items, then LOCK P
 | 2026-08-12 | PROJECT_PROGRESS.md created | PROJECT_PROGRESS.md | Phase 02 — Global UI (IN PROGRESS) | Complete Phase 02 verification, then begin Phase 03 Homepage carousel |
 | 2026-08-12 | Created /progress-workflow/ documentation system | PROJECT_PROGRESS.md, progress-workflow/*.md | Phase 02 — Global UI (IN PROGRESS) | Complete Phase 02 verification, then begin Phase 03 Homepage carousel |
 | 2026-08-12 | Phase 02 final verification audit completed | PROJECT_PROGRESS.md | Phase 02 — Global UI (IN PROGRESS, audit done, needs fixes before lock) | Review audit findings, implement fixes, then lock Phase 02 |
+| 2026-08-12 | Phase 02 fixes completed and LOCKED | index.html, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Phase 02 — Global UI (COMPLETE / LOCKED) | Phase 03 — Homepage (promotional 16:9 carousel) |
