@@ -17,6 +17,7 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
 - Navbar items: **Home, Games, Promotions, APK, Help**, plus **Download APK** CTA.
 - Global navbar and footer remain consistent across all pages.
 - Homepage promotional carousel belongs inside **homepage `<main>`**, not the global header.
+- On mobile, the primary Download APK CTA remains visible in the navbar outside the hamburger menu so users can access the primary conversion destination without opening navigation.
 - Language switcher is **floating/sticky**, positioned below navbar and aligned right.
 - EN uses the **UK flag**.
 - HI uses the **India flag**.

@@ -129,6 +129,22 @@ body {
     transform: translateY(-1px);
 }
 
+.navbar__cta--mobile {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .navbar__cta--mobile {
+        display: inline-flex;
+        padding: 0.45rem 0.8rem;
+        font-size: 0.8125rem;
+    }
+
+    .navbar__nav .navbar__cta {
+        display: none;
+    }
+}
+
 .navbar__toggle {
     display: flex;
     flex-direction: column;
