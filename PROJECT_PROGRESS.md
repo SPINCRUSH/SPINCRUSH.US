@@ -93,6 +93,7 @@ Planned order:
 - [x] Promotional 16:9 carousel
 - [x] Hero / main introduction
 - [x] Homepage H1
+- [x] Homepage opening refinement
 - [ ] Games section
 - [ ] Promotions section
 - [ ] Spin Crush APK section
@@ -244,8 +245,12 @@ SPINCRUSH.US/
 - Floating language switcher
 - Global footer
 - Promotional 16:9 carousel inside `<main>`
-- "What is Spin Crush?" introduction section
-- Homepage H1 above carousel: "SPIN CRUSH — Gaming Platform for India"
+- Carousel semantic refinement: visual labels instead of headings, descriptions removed
+- Carousel CTAs: text "View Bonus", destination `/promotions/`
+- Homepage H1 below carousel: "SPIN CRUSH — Gaming Platform for India" (single H1; no headings inside carousel)
+- Homepage intro paragraph below H1
+- "What is Spin Crush?" introduction section (H2 heading + H3 feature headings)
+- Carousel functionality unchanged (controls, indicators, autoplay, hover/focus pause, keyboard, swipe, reduced-motion)
 
 ### Not Implemented
 - Games section
@@ -396,3 +401,4 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-12 | Integrated real carousel banner assets | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review carousel visually before next homepage section |
 | 2026-08-12 | Built Phase 03.2 "What is Spin Crush?" section | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review section visually before next homepage component |
 | 2026-08-12 | Added homepage H1 above carousel | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Review heading hierarchy before next homepage section |
+| 2026-08-12 | Refined Phase 03 homepage opening structure | index.html, assets/css/style.css, PROJECT_PROGRESS.md | Phase 03 — Homepage (IN PROGRESS) | Audit homepage opening visually and semantically before next section |
