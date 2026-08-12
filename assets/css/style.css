@@ -654,11 +654,39 @@ main {
     animation: about-feature-border 9s linear infinite;
     pointer-events: none;
     will-change: transform;
+    z-index: 1;
+}
+
+.about__feature::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 330deg,
+        var(--color-accent) 345deg,
+        var(--color-accent) 360deg
+    );
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    opacity: 0.25;
+    animation: about-feature-border 9s linear infinite;
+    pointer-events: none;
+    will-change: transform;
     z-index: 0;
+    filter: blur(2px);
 }
 
 .about__feature:hover::before {
     opacity: 0.85;
+}
+
+.about__feature:hover::after {
+    opacity: 0.4;
 }
 
 @keyframes about-feature-border {
@@ -666,9 +694,14 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .about__feature::before {
+    .about__feature::before,
+    .about__feature::after {
         animation: none;
         opacity: 0.12;
+    }
+
+    .about__feature::after {
+        filter: none;
     }
 
     .about__feature {
