@@ -27,7 +27,7 @@ html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    scroll-padding-top: calc(var(--navbar-height) + var(--lang-switcher-height) + 16px);
+    scroll-padding-top: calc(var(--navbar-height) + 16px);
 }
 
 body {
@@ -249,11 +249,18 @@ button:focus-visible {
 
 /* Language Switcher */
 .lang-switcher {
-    position: sticky;
+    position: fixed;
     top: var(--navbar-height);
+    right: 11.2rem;
     z-index: 99;
     width: fit-content;
-    margin: 0.5rem 1rem 0 auto;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .lang-switcher {
+        right: 1rem;
+    }
 }
 
 .lang-switcher__pill {
@@ -397,6 +404,33 @@ button:focus-visible {
     font-size: 0.875rem;
 }
 
+#kusnadi-signature {
+    background: linear-gradient(90deg, #fef3c7, #fcd34d, #f59e0b, #d97706, #fcd34d, #fef3c7);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: kusnadi-shift 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.25));
+}
+
+@keyframes kusnadi-shift {
+    0%, 100% { background-position: 0% center; }
+    50% { background-position: 100% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #kusnadi-signature {
+        animation: none;
+        background: linear-gradient(90deg, #fcd34d, #f59e0b, #d97706);
+        background-size: 100% auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        filter: drop-shadow(0 0 3px rgba(251, 191, 36, 0.2));
+    }
+}
+
 @media (min-width: 640px) {
     .site-footer__inner {
         grid-template-columns: repeat(2, 1fr);
@@ -411,8 +445,8 @@ button:focus-visible {
 
 /* Main content spacing */
 main {
-    min-height: calc(100vh - var(--navbar-height) - var(--lang-switcher-height) - 200px);
-    padding-top: 0.5rem;
+    min-height: calc(100vh - var(--navbar-height) - 200px);
+    padding-top: 0;
 }
 
 /* Homepage title */
@@ -511,7 +545,9 @@ main {
 }
 
 .carousel__slide-link {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     position: absolute;
     inset: 0;
     z-index: 0;
@@ -671,6 +707,7 @@ main {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 2.5rem;
+    align-items: start;
 }
 
 @media (min-width: 640px) {

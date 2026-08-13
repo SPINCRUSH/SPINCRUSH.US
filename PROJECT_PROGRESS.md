@@ -220,7 +220,12 @@ SPINCRUSH.US/
 - **URL consistency:** All internal links use trailing-slash convention.
 
 ### Language Switcher
-- Sticky positioning below navbar (`top: var(--navbar-height)`, `z-index: 99`).
+- **Positioning:** `position: fixed` overlay below navbar (FROZEN — see "Language Switcher Positioning Freeze" below).
+- `top: var(--navbar-height)` (64px) — sits directly under navbar.
+- `right: 11.2rem` on desktop; `right: 1rem` for `max-width: 1024px`.
+- `z-index: 99` — below navbar (`z-index: 100`), above carousel.
+- `margin: 0` — horizontal/vertical controlled by `top`/`right` only.
+- No longer participates in normal flow; carousel is not pushed down.
 - Pill-shaped container with EN | HI options.
 - EN: UK flag + "EN", active state (`is-active`, `aria-current="true"`).
 - HI: India flag + "HI", disabled state (`aria-disabled="true"`, `pointer-events: none`, opacity 0.5).
@@ -394,7 +399,110 @@ The website should account for these payment methods in future relevant sections
 
 ---
 
-## Future / Potential Features (Backlog)
+## Language Switcher Positioning Freeze
+
+**Date:** 2026-08-13
+**Status:** COMPLETE — FROZEN / VERIFIED
+
+### Problem
+
+The `.lang-switcher` initially used `position: sticky` with `top: var(--navbar-height)`. While sticky keeps the element visible on scroll, it **still participates in normal document flow** — meaning it consumes vertical space (~36px) that pushes `.carousel` downward.
+
+The structure is:
+```html
+<body>
+  <header class="navbar">...</header>
+  <div class="lang-switcher">...</div>
+  <main>
+    <section class="carousel">...</section>
+  </main>
+</body>
+```
+
+- `.lang-switcher` is a **direct child of `<body>`** (not a sibling of `.carousel`).
+- `.carousel` lives inside `<main>`.
+- HTML structure is **not changed**.
+
+### Solution: `position: fixed` overlay
+
+`.lang-switcher` was changed from `position: sticky` to `position: fixed`. This removes it from normal flow entirely — the carousel is no longer pushed down, and the switcher remains visible during scroll.
+
+### Final Implementation (`assets/css/style.css`)
+
+**`.lang-switcher`:**
+```css
+.lang-switcher {
+    position: fixed;
+    top: var(--navbar-height);   /* 64px — directly under navbar */
+    right: 11.2rem;               /* desktop horizontal position preserved */
+    z-index: 99;                  /* below navbar (100), above carousel (0) */
+    width: fit-content;
+    margin: 0;                    /* removed flow-based margin positioning */
+}
+
+@media (max-width: 1024px) {
+    .lang-switcher {
+        right: 1rem;              /* safe right spacing on mobile/tablet */
+    }
+}
+```
+
+**`main`:**
+```css
+main {
+    min-height: calc(100vh - var(--navbar-height) - 200px);
+    padding-top: 0;
+}
+```
+
+**`html`:**
+```css
+html {
+    scroll-padding-top: calc(var(--navbar-height) + 16px);
+}
+```
+
+### Keputusan Desain
+
+| Keputusan | Nilai |
+|---|---|
+| Position mode | `fixed` (bukan `sticky`) |
+| Top position | `var(--navbar-height)` = 64px |
+| Desktop right | `11.2rem` |
+| Mobile/tablet right | `1rem` (`@media max-width: 1024px`) |
+| z-index switcher | `99` |
+| z-index navbar | `100` |
+| Margin | `0` (semua dikontrol via `top`/`right`) |
+| `--lang-switcher-height` | Tetap didefinisikan (36px) — tidak dihapus, tetapi tidak lagi dipakai di `scroll-padding-top` atau `main min-height` |
+
+### Dependency Adjustment
+
+`--lang-switcher-height` (36px) remains defined in `:root` as a CSS custom property but its only two usages were removed:
+1. `html { scroll-padding-top }` — no longer includes `--lang-switcher-height` because the switcher is fixed (not in flow).
+2. `main { min-height }` — no longer subtracts `--lang-switcher-height` because the switcher no longer takes vertical space in normal flow.
+
+### Overflow & Safety
+
+- No horizontal `left`, `margin-left: auto`, or large fixed right margins on mobile.
+- `right: 1rem` on mobile ensures the switcher stays within viewport.
+- No `!important` overrides introduced.
+- No duplicate `.lang-switcher` selector exists.
+- Carousel `overflow: hidden`, `position: relative`, `max-width: 1200px`, and `aspect-ratio: 16/9` remain unchanged.
+- Navbar remains `position: sticky`, `top: 0`, `z-index: 100`.
+- HTML structure and JavaScript are unchanged.
+
+### Dampak Terhadap Komponen Lain
+
+| Komponen | Terdampak |
+|---|---|
+| `.navbar` | Tidak ada — tetap sticky `z-index: 100` |
+| `.carousel` | Tidak ada — `position: relative` tidak berubah; autoplay, controls, indicators, responsive behavior tidak terdampak |
+| `<main>` | Padding-top dihapus (0); min-height tidak lagi mengurangi `--lang-switcher-height` |
+| `<body>` | Tidak ada perubahan — hanya `.lang-switcher` dan anak-anaknya yang berubah positioning |
+| Scroll behavior | Anchor navigation `scroll-padding-top` disesuaikan agar hanya menghitung navbar (64px) + 16px |
+| Accessibility | Tidak ada perubahan — `role="region"`, `aria-label`, `aria-current`, `aria-disabled`, `tabindex` tetap |
+
+---
 
 ### Demo Slots / Demo Games
 
@@ -446,3 +554,4 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-13 | Confirmed Promotions source data added to project blueprint for future /promotions/ page implementation | progress-workflow/PROJECT_BLUEPRINT.md | Documentation | Promotions page source data stored for future implementation |
 | 2026-08-13 | Implemented homepage SEO, Platform section, expanded FAQ, and global CSS spacing system | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review updated homepage visually |
 | 2026-08-13 | Reorganized carousel banner assets and added branding carousel slide | assets/images/, index.html | Phase 03 — Homepage (IN PROGRESS) | Verify carousel and assets visually |
+| 2026-08-13 | FROZEN: Language switcher positioning changed from sticky to fixed overlay | assets/css/style.css, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Phase 03 — Homepage (IN PROGRESS) | Carousel no longer pushed down by lang-switcher; scroll-padding-top and main min-height adjusted; no HTML/JS changes |

@@ -33,7 +33,14 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
 - Footer brand description updated to include YONO slots messaging.
 - Homepage SEO baseline implemented: title, meta description, canonical URL, Open Graph, Twitter Card, JSON-LD structured data.
 - Global CSS custom properties implemented for spacing, panel colors, shadows, and pill radius.
-- Key homepage images include width and height attributes to prevent layout shift.
+- Homepage key homepage images include width and height attributes to prevent layout shift.
+- Language switcher uses `position: fixed` (not sticky) to overlay below the navbar without consuming vertical flow space; carousel is not pushed down.
+  - Desktop: `right: 11.2rem`
+  - Mobile/tablet (`max-width: 1024px`): `right: 1rem`
+  - `top: var(--navbar-height)` keeps it directly below the sticky navbar
+  - `z-index: 99` keeps it below navbar (`z-index: 100`)
+  - `--lang-switcher-height` variable is retained but no longer used in `scroll-padding-top` or `main min-height`
+  - HTML structure and JavaScript are unchanged
 
 ---
 
