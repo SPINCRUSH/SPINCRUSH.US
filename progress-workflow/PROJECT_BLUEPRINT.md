@@ -133,12 +133,12 @@ Do not add payment UI yet.
 ### Support
 - `/install/`
 - `/download-help/`
-- `/contact/`
+- `/contact.html`
 
 ### Legal
-- `/privacy/`
-- `/terms/`
-- `/disclaimer/`
+- `/privacy.html`
+- `/terms.html`
+- `/disclaimer.html`
 
 ### Localization (later)
 - `/hi/`

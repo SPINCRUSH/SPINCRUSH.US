@@ -25,7 +25,7 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
 - Future pages must **NOT** be implemented before their designated phase.
 - Unnecessary frameworks/libraries are **avoided**.
 - Site must remain **lightweight** and **mobile-first**.
-- Internal URLs use the **trailing-slash convention** (e.g., `/games/`, `/promotions/`, `/help/`, `/install/`, `/download-help/`, `/contact/`, `/privacy/`, `/terms/`, `/disclaimer/`).
+- Internal URLs use the **trailing-slash convention** for dynamic/content pages (e.g., `/games/`, `/promotions/`, `/help/`, `/install/`, `/download-help/`), and **direct `.html` convention** for static Legal & Trust pages (e.g., `/contact.html`, `/privacy.html`, `/terms.html`, `/disclaimer.html`).
 - Homepage carousel uses 3 slides: branding image, Jackpot Lotto, Referral Bonus.
 - Carousel banner images are stored in `assets/images/banners/promotions/`.
 - Homepage includes a Platform section covering Mobile Access, Profile, Leaderboard, Support, and Payment Options.
@@ -41,6 +41,13 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
   - `z-index: 99` keeps it below navbar (`z-index: 100`)
   - `--lang-switcher-height` variable is retained but no longer used in `scroll-padding-top` or `main min-height`
   - HTML structure and JavaScript are unchanged
+- Legal & Trust pages use direct `.html` URLs (not folder-based):
+  - `/privacy.html`
+  - `/terms.html`
+  - `/disclaimer.html`
+  - `/contact.html`
+  - Legal pages: privacy, terms, disclaimer — created as root-level `.html`
+  - Contact: email verified from homepage JSON-LD (`hanakusnadi178@gmail.com`)
 
 ---
 
