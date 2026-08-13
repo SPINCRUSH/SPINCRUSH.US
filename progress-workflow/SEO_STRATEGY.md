@@ -1,7 +1,24 @@
 # SPINCRUSH.US — SEO Strategy
 
-This is a strategy document only.
-It does not contain final page titles, meta descriptions, or implementation details.
+This document records SEO strategy and current implementation status.
+
+## CURRENT IMPLEMENTATION STATUS
+
+### Homepage (2026-08-13)
+- Title and meta description implemented.
+- Canonical URL implemented (`https://spincrush.us/`).
+- Open Graph tags implemented (type, title, description, url, site_name, image).
+- Twitter Card tags implemented (summary_large_image).
+- JSON-LD structured data implemented (WebSite, Organization, WebPage).
+- Image width and height attributes added for CLS prevention.
+- Internal linking strategy implemented (contextual links to `/`, `/promotions/`, `/games/`, `/spin-crush-apk/`).
+
+### Not Yet Implemented
+- Robots meta tag / robots.txt
+- XML sitemap
+- hreflang annotations
+- Structured data for future pages (SoftwareApplication, FAQPage)
+- SEO for future core pages (/games/, /promotions/, /spin-crush-apk/, /help/)
 
 ## PRIMARY KEYWORDS
 
@@ -43,6 +60,7 @@ It does not contain final page titles, meta descriptions, or implementation deta
 
 ## TITLE / META PRINCIPLES
 
+- Homepage title and meta description implemented.
 - Titles should be unique per page, include primary keyword naturally, and stay under 60 characters where practical.
 - Meta descriptions should be unique, compelling, and include relevant keywords naturally.
 - Avoid keyword stuffing in titles or descriptions.
@@ -62,31 +80,34 @@ It does not contain final page titles, meta descriptions, or implementation deta
 
 ## IMAGE ALT TEXT
 
+- Homepage images include descriptive alt text and width/height attributes for CLS prevention.
 - Describe the image content accurately.
 - Include relevant keywords only when they genuinely describe the image.
 - Avoid generic alt text like "image" or "banner."
 
 ## CANONICAL PLANNING
 
-- Every page should have a canonical URL.
+- Homepage canonical implemented: `https://spincrush.us/`
+- Every future page should have a canonical URL.
 - APK page canonical: `/spin-crush-apk/`
 - Avoid duplicate content across URLs.
-- Plan canonical tags before launch.
 
 ## OPEN GRAPH PLANNING
 
-- Prepare Open Graph tags for social sharing.
-- Use consistent branding (SPIN CRUSH, SPINCRUSH.US).
-- Plan OG images for homepage and key pages.
+- Open Graph tags implemented on homepage.
+- Twitter Card tags implemented on homepage.
+- OG image uses `assets/images/branding/spin-crush.webp`.
+- Plan OG tags for future core pages.
 
 ## STRUCTURED DATA PLANNING
 
-- Plan JSON-LD structured data for:
-  - Organization
+- JSON-LD structured data implemented on homepage for:
   - WebSite
+  - Organization
+  - WebPage
+- Plan JSON-LD structured data for future pages:
   - SoftwareApplication (for APK page)
   - FAQPage (for help/FAQ sections)
-- Implement after content is finalized.
 
 ## HREFLANG PLANNING
 

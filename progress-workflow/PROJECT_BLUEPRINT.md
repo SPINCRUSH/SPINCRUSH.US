@@ -162,12 +162,14 @@ Do not create these pages until their development phase.
 - Global consistency
 
 ### Phase 03 — Homepage
-- Promotional 16:9 carousel
-- Primary homepage messaging
-- Games section
-- Promotions/content
+- Promotional 16:9 carousel (3 slides: branding image, Jackpot Lotto, Referral Bonus)
+- Primary homepage messaging (YONO Slots, first deposit bonus, daily rewards)
+- Games section (Slots, Casino Games, Rummy)
+- Promotions/content section with highlights
+- Platform section (Mobile Access, Profile, Leaderboard, Support, Payment Options)
 - APK conversion section
 - Payment information where appropriate
+- FAQ section
 - Additional homepage sections
 
 ### Phase 04 — Core Pages
@@ -187,12 +189,13 @@ Do not create these pages until their development phase.
 - Disclaimer
 
 ### Phase 07 — SEO
-- Keyword implementation
-- Metadata
-- Canonical
+- Homepage SEO implemented (title, meta description, canonical, OG, Twitter, JSON-LD, image dimensions)
+- Keyword implementation for future pages
+- Metadata for future pages
+- Canonical for future pages
 - Robots
-- Open Graph
-- Structured data
+- Open Graph for future pages
+- Structured data for future pages (SoftwareApplication, FAQPage)
 - Internal linking
 - Image SEO
 - Hreflang preparation
@@ -681,6 +684,509 @@ Do NOT create the generator during this documentation task.
 ==================================================
 
 END PROMO CODE FEATURE
+
+==================================================
+
+CONFIRMED PROMOTIONS DATA
+
+==================================================
+
+Source:
+Project-provided promotion data
+
+Status:
+Confirmed source data for future Promotions page implementation.
+
+==================================================
+
+PROMOTIONS CATEGORIES
+
+==================================================
+
+A. Deposit & Check-in Promotions
+- Daily Bonus Check-in
+- First Deposit Bonus
+
+B. Events & Prize Promotions
+- Jackpot Lotto
+- Leaderboards
+- Lucky Chest Event
+- Lucky Gullak
+- Lucky Wheel
+- Mystery Bonus
+
+C. Social & Referral Promotions
+- Social Media Promo Code
+- Refer & Earn
+
+D. Cashback / Card Promotions
+- Weekly & Monthly Card
+
+==================================================
+
+DAILY BONUS CHECK-IN
+
+==================================================
+
+Title:
+Daily Bonus Check-in
+
+Core concept:
+Unlock free daily check-in rewards when you make a qualifying deposit.
+
+Confirmed details:
+
+- Each VIP level has its own deposit requirement to activate the benefit.
+- Once activated, users can enjoy daily rewards based on their VIP level.
+- Make a qualifying deposit to unlock check-in days.
+- Different VIP levels have different deposit requirements.
+- Bonus amounts vary by VIP level.
+- Higher VIP levels enjoy higher rewards.
+- Users should refer to the VIP table for check-in days after deposit.
+- Users should log in every day to maintain their streak.
+- If a user misses even one day, the streak resets and starts again from Day 1.
+
+Do NOT invent:
+- exact VIP levels
+- exact deposit requirements
+- exact reward amounts
+- exact check-in schedule
+
+unless those details already exist in confirmed project documentation.
+
+==================================================
+
+FIRST DEPOSIT BONUS
+
+==================================================
+
+Title:
+First Deposit Bonus
+
+Confirmed headline:
+170%
+
+Confirmed concept:
+Make your first three deposits and receive a special bonus reward each time you top up.
+
+Confirmed details:
+
+- The first three deposits each come with an exclusive bonus offer.
+- Users receive a special bonus reward on each of their first three deposits.
+- The promotion gives users more opportunities to play at Spin Crush.
+
+Preserve the confirmed 170% figure.
+
+Do NOT invent:
+- individual bonus percentages for deposit 1, 2, or 3
+- minimum deposit amounts
+- maximum bonus amounts
+- wagering requirements
+
+unless separately confirmed.
+
+==================================================
+
+JACKPOT LOTTO
+
+==================================================
+
+Title:
+Jackpot Lotto
+
+Confirmed headline:
+Collect Ticket per Day and Win up to 24% of the Prize Pool
+
+Confirmed details:
+
+- Participate in Jackpot Lotto and win from the daily prize pool.
+- Deposit at least ₹50 to activate the event.
+- Earn tickets through deposits and turnover.
+- The event resets daily at 00:00.
+- The draw takes place at 23:55.
+- Each account can earn up to 100 tickets per day.
+- Every ticket has a chance to win.
+- Multiple prizes can be won in a single day.
+- Collecting more tickets increases winning chances.
+
+Daily prize distribution:
+
+- 1st Prize — 1 winner shares 24% of the prize pool.
+- 2nd Prize — 7 winners share 4% each.
+- 3rd Prize — 50 winners share 0.4% each.
+- Lucky Prize — 1,000 winners share 0.03% each.
+
+The source value "?50" has been normalized to ₹50 because "?" represents the lost ₹ symbol.
+
+Do not alter the confirmed prize distribution.
+
+==================================================
+
+LEADERBOARDS
+
+==================================================
+
+Title:
+Leaderboards
+
+Confirmed concept:
+Compete for higher rankings and earn bigger rewards.
+
+Confirmed prize pool:
+₹185,000
+
+Do NOT invent:
+- ranking period
+- number of winners
+- exact prize distribution
+- scoring mechanics
+- ranking algorithm
+- eligibility requirements
+
+unless separately confirmed.
+
+==================================================
+
+LUCKY CHEST EVENT
+
+==================================================
+
+Title:
+Lucky Chest Event
+
+Confirmed concept:
+Get rewards from your downline.
+
+Confirmed details:
+
+- Share your referral link with friends.
+- When a friend registers through your link and becomes a valid downline, they count toward your progress.
+- Once the required number of valid downlines is reached, you can open the treasure chest and receive cash rewards.
+
+Valid downline requirements:
+
+- Deposit more than ₹100.
+- Achieve turnover of more than ₹5,000.
+
+The source values "?1oo" and "?5ooo" have been normalized to ₹100 and ₹5,000 because "?" represents the lost ₹ symbol.
+
+Do NOT invent:
+- exact number of downlines required
+- additional eligibility requirements
+- reward amounts
+
+unless separately confirmed.
+
+==================================================
+
+LUCKY GULLAK
+
+==================================================
+
+Title:
+Lucky Gullak
+
+Confirmed concept:
+Catch the pot reward.
+
+Confirmed details:
+
+- Stay online and join the Lucky Gullak event.
+- Rewards are distributed randomly throughout the day.
+- Random rewards are given to online players.
+- Users participate by staying logged in during the event.
+- The longer a user stays online, the higher their chances of receiving a reward.
+
+Do NOT invent:
+- exact reward amounts
+- exact event schedule
+- guaranteed reward frequency
+- minimum online duration
+
+==================================================
+
+LUCKY WHEEL
+
+==================================================
+
+Title:
+Lucky Wheel
+
+Confirmed concept:
+Spin the Lucky Wheel for a chance to win exciting rewards.
+
+Confirmed details:
+
+- Deposit the required amount to unlock a free spin.
+- Prizes may include:
+  - Coins
+  - Bonuses
+  - Free Spins Voucher
+  - Deposit Rewards Voucher
+- The wheel resets daily.
+- Users can participate again the following day.
+
+Confirmed CTA concept:
+Deposit now, spin the wheel, and discover your rewards.
+
+Do NOT invent:
+- exact deposit requirement
+- exact prize values
+- number of spins
+- probability or odds
+
+unless separately confirmed.
+
+==================================================
+
+MYSTERY BONUS
+
+==================================================
+
+Title:
+Mystery Bonus
+
+Confirmed concept:
+Play Spin Crush daily to receive mystery bonuses.
+
+Do NOT invent:
+- reward amounts
+- eligibility requirements
+- timing
+- frequency
+- deposit requirements
+
+==================================================
+
+SOCIAL MEDIA PROMO CODE
+
+==================================================
+
+Title:
+Social Media Promo Code
+
+Confirmed details:
+
+- Follow Spin Crush on social media channels.
+- Get daily promo codes.
+- Get the latest promotions.
+- Get agent benefit tips.
+
+Do NOT invent:
+- exact social media platforms
+- posting schedules
+- exact promo code values
+- guaranteed daily availability
+
+unless separately confirmed.
+
+==================================================
+
+REFER & EARN
+
+==================================================
+
+Title:
+Refer & Earn
+
+Confirmed concept:
+Invite friends to play Spin Crush and earn referral rewards.
+
+Confirmed flow:
+
+1. Copy your invite link from the "Make Money" page.
+2. Share it with friends.
+3. Friends register.
+4. Claim rewards in the "My Rewards" page.
+
+Confirmed valid registration requirement:
+
+- Friend binds a phone number.
+- Reward: ₹5 for each valid registration.
+
+The original source showed "F5"; this is confirmed as ₹5 because the source extraction replaced the Indian Rupee symbol.
+
+Confirmed friend betting reward:
+
+- Friends bet.
+- User receives 1% of the friend's total bet amount.
+
+Confirmed leaderboard component:
+
+- Top 500 agents are rewarded weekly.
+- Higher rank earns more.
+
+Do NOT invent:
+- exact weekly prize amounts
+- exact leaderboard prize distribution
+- ranking formula
+- additional eligibility requirements
+
+unless separately confirmed.
+
+==================================================
+
+WEEKLY & MONTHLY CARD
+
+==================================================
+
+Title:
+Weekly & Monthly Card
+
+Confirmed concept:
+Choose a weekly or monthly card to receive daily cashback.
+
+The original source contains the following values:
+
+EVERY
+CYCLE
+DEPOSIT
+BONUS
+FIRST DAY
+DAY
+TIME
+
+50
+20
+10
+10
+7 DAYS
+
+100
+14
+100+2
+2
+7 DAYS
+
+200
+30
+10
+7 DAYS
+160+10
+
+500
+70
+10
+500+10
+7 DAYS
+14
+
+1,000
+175
+1,000+14
+7 DAYS
+
+2,000
+420
+2,000+60
+60
+7 DAYS
+
+150
+300
+300+5
+30 DAYS
+5
+
+8,000
+920
+5,000+164
+164
+30 DAYS
+
+350
+20,000
+2,500
+12,000+350
+30 DAYS
+
+IMPORTANT:
+
+The numeric source data is available, but the extraction does not preserve reliable column alignment.
+
+DO NOT infer which value belongs to which column.
+
+DO NOT create a finalized public-facing table from this data.
+
+Store this as:
+
+"Weekly & Monthly Card — confirmed raw source data; table column alignment requires verification against the original source before publication."
+
+Do not discard the raw values.
+
+Do not invent missing column relationships.
+
+==================================================
+
+DATA NORMALIZATION
+
+==================================================
+
+The original source contained OCR/text-extraction formatting issues.
+
+Normalize the confirmed currency values as follows:
+
+- ?5o → ₹50
+- ?50 → ₹50
+- ?1oo → ₹100
+- ?5ooo → ₹5,000
+- F5 → ₹5
+
+Reason:
+The original "?" or "F" represents the Indian Rupee symbol "₹" lost or corrupted during extraction.
+
+These normalized values are confirmed.
+
+Do not mark these specific values as "requiring verification."
+
+The only current verification issue is the structural column alignment of the Weekly & Monthly Card data.
+
+==================================================
+
+FUTURE PROMOTIONS PAGE
+
+==================================================
+
+These promotion details are intended to become the source of truth for:
+
+/promotions/
+
+The future page should eventually provide more detailed explanations of each promotion.
+
+For now:
+
+DO NOT create /promotions/.
+
+DO NOT create new HTML files.
+
+DO NOT create new routes.
+
+DO NOT add this detailed content to the homepage.
+
+The homepage should continue using concise promotional teaser copy.
+
+==================================================
+
+HOMEPAGE PROTECTION
+
+==================================================
+
+Do NOT modify the existing homepage Promotions section.
+
+Do NOT change:
+
+- "Spin Crush Promotions" H2
+- current Promotions intro
+- Promotions image
+- Promotions CTA
+- Promotions layout
+- Promotions CSS
+
+Do not replace the homepage teaser with the detailed promotion mechanics.
+
+==================================================
+
+END CONFIRMED PROMOTIONS DATA
 
 ==================================================
 

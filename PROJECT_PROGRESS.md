@@ -23,7 +23,7 @@ The site uses a global-page structure:
 - **Global Header:** Sticky `<header class="navbar">` containing the logo, primary navigation links (Home, Games, Promotions, APK, Help), and a "Download APK" CTA button. Included on every page.
 - **Page-specific Main content:** Each page has its own `<main>` element. The homepage main currently contains the promotional carousel, homepage intro, Games, Promotions, APK, and FAQ sections.
 - **Global Footer:** Sticky `<footer class="site-footer">` with four columns: Brand, Explore, Help, Legal. Included on every page.
-- **Homepage-specific carousel:** Planned as a 16:9 promotional carousel inside the homepage `<main>`. Not yet implemented.
+- **Homepage-specific carousel:** Implemented as a 16:9 promotional carousel inside the homepage `<main>` with 3 slides (branding image + promotional banners).
 - **Future multilingual structure:** English at root `/`. Hindi planned at `/hi/` with `hreflang` annotations. Language switcher UI exists but HI is disabled until Hindi pages are built.
 
 ---
@@ -100,7 +100,8 @@ Planned order:
 - [x] Promotions section
 - [x] Spin Crush APK section
 - [x] Final download CTA
-- [ ] FAQ/help preview
+- [x] FAQ section
+- [x] Platform section
 
 ### Phase 04 — Core Pages
 **Status:** NOT STARTED
@@ -243,26 +244,30 @@ SPINCRUSH.US/
 - Global header (navbar)
 - Floating language switcher
 - Global footer
-- Promotional 16:9 carousel inside `<main>`
+- Promotional 16:9 carousel inside `<main>` with 3 slides (branding image, Jackpot Lotto, Referral Bonus)
+- Carousel images relocated from `assets/images/banners/carousel/` to `assets/images/banners/promotions/`
 - Carousel semantic refinement: visual labels instead of headings, descriptions removed
 - Carousel visible CTA buttons removed; promotional banners made clickable and link to `/promotions/`
-- Homepage H1 below carousel: "Spin Crush — Online Slots, Casino Games & Rummy | All in One Platform" (single H1; no headings inside carousel)
-- Homepage intro paragraph below H1
+- Homepage H1 below carousel: "Spin Crush 🚀 YONO Slots Online with First Deposit Bonus & Daily Rewards"
+- Homepage intro paragraph with contextual internal link to homepage
 - "Explore Spin Crush Games" section with three linked category cards: Slots (`/games/slots/`), Casino Games (`/games/casino/`), Rummy (`/games/rummy/`), plus "View All Games" (`/games/`)
-- "Spin Crush Promotions" section with inner wrapper (content + media), promotional image, and `/promotions/` CTA
+- "Spin Crush Promotions" section with inner wrapper (content + media), promotional highlights (4 blocks), promotional image, and `/promotions/` CTA
+- "Explore the Spin Crush Platform" section with 5 content blocks: Mobile Access, Your Profile, Leaderboard, Support & Help, Payment Options
 - "Get Spin Crush APK" unified conversion block with:
   - H2: "Get Spin Crush APK"
   - Intro paragraph with contextual link to `/spin-crush-apk/`
   - APK information table (App, Version 1.1.7, Size 40 MB, Download Free)
   - Right column: Spin Crush branding image (`assets/images/branding/images.webp`) with verified badge
   - Download CTA below branding image: "Download Spin Crush APK" → `/assets/downloads/spincrush.apk`
-- FAQ section with 4 expandable items (CTA removed)
+- FAQ section with 6 expandable items wrapped in panel (CTA removed)
 - Animated green card border prototype
 - Mobile navbar persistent Download APK CTA: visible outside hamburger on mobile, links to `/spin-crush-apk/`
 - Carousel interaction refined: banners are clickable, controls and indicators remain independent, responsive/accessibility verified
+- Homepage SEO implemented: title, meta description, canonical URL, Open Graph, Twitter Card, JSON-LD structured data, image width/height attributes
+- Global CSS spacing system implemented via custom properties (`--section-padding-x`, `--section-gap`, `--radius-pill`, `--color-panel`, `--shadow-panel`)
 
 ### Not Implemented
-- Supporting information section (absorbed into APK section via contextual `/spin-crush-apk/` link)
+- Supporting information section (absorbed into Platform and APK sections)
 - /games/ page
 - /promotions/ page
 - /spin-crush-apk/ page
@@ -280,8 +285,8 @@ SPINCRUSH.US/
 - Affected sections included Games and Promotions during their initial implementation pass.
 
 ### Current State
-- Spacing has been tightened as part of individual section implementation (Games, Promotions, APK).
-- No global spacing system has yet been applied across all sections.
+- Global spacing system applied via CSS custom properties (`--section-padding-x`, `--section-gap`, `--radius-pill`, `--color-panel`, `--shadow-panel`).
+- Spacing has been tightened and standardized across homepage sections (Games, Promotions, APK, FAQ, Platform).
 
 ### Recommendation
 - After homepage design is finalized, apply a consistent spacing scale globally.
@@ -295,23 +300,23 @@ SPINCRUSH.US/
 - `lang="en"` attribute on `<html>`
 - `<meta charset="UTF-8">`
 - `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
-- `<title>SPINCRUSH.US</title>`
-- `<meta name="description" content="">` (empty, needs content)
+- `<title>SPIN CRUSH 🚀 YONO Slots | Claim Bonuses & Get Latest APK</title>`
+- `<meta name="description" content="SPIN CRUSH is your destination for YONO slots online, casino games, rummy, and more, with attractive bonuses all in one place. Get the latest Android APK now!">`
+- `<link rel="canonical" href="https://spincrush.us/">`
+- Open Graph tags (type, title, description, url, site_name, image)
+- Twitter Card tags (summary_large_image)
+- JSON-LD structured data (WebSite, Organization, WebPage)
 - Favicon linked
 - Semantic HTML elements (`<header>`, `<main>`, `<footer>`, `<nav>`)
 - ARIA roles and labels for accessibility
+- Image width and height attributes for CLS prevention
 
 ### Not Implemented
-- Page-specific titles and meta descriptions
-- Canonical URLs
 - Robots meta tag / robots.txt
 - XML sitemap
-- Open Graph tags
-- Structured data (JSON-LD)
-- Image alt text optimization
-- Internal linking strategy
-- SEO keyword mapping per page
 - hreflang annotations
+- Hindi `/hi/` pages
+- Structured data for future pages (SoftwareApplication, FAQPage)
 
 ---
 
@@ -327,11 +332,11 @@ SPINCRUSH.US/
 - `assets/images/flag/india.svg` (language switcher — HI, disabled)
 
 ### Banners
-- `assets/images/banners/carousel/jackpot-lotto.webp`
-- `assets/images/banners/carousel/refer-and-earn.webp`
 - `assets/images/banners/promotions/promotions.webp`
-- `assets/images/banners/promotions/promo-code.webp` (untracked/reorganized)
-- `assets/images/banners/promotions/mystery-bonus.webp` (untracked/reorganized)
+- `assets/images/banners/promotions/jackpot-lotto.webp`
+- `assets/images/banners/promotions/refer-and-earn.webp`
+- `assets/images/banners/promotions/mystery-bonus-spin-crush.webp`
+- `assets/images/branding/spin-crush.webp` (carousel slide)
 
 ---
 
@@ -370,8 +375,8 @@ The website should account for these payment methods in future relevant sections
 
 ### INFORMATIONAL
 - `assets/images/branding/images.webp` exists and is now actively used in the APK section.
-- Carousel assets are in `assets/images/banners/carousel/` (jackpot-lotto.webp, refer-and-earn.webp).
-- Promotions assets are in `assets/images/banners/promotions/` (promotions.webp, promo-code.webp, mystery-bonus.webp).
+- Carousel assets are in `assets/images/banners/promotions/` (jackpot-lotto.webp, refer-and-earn.webp).
+- Promotions assets are in `assets/images/banners/promotions/` (promotions.webp, promo-code.webp, mystery-bonus-spin-crush.webp).
 - Homepage `<main>` now contains implemented sections (carousel, games, promotions, APK, FAQ).
 - No structured data, Open Graph, or advanced SEO yet (Phase 08).
 - Hindi `/hi/` pages do not exist yet (as planned).
@@ -438,3 +443,6 @@ The website should account for these payment methods in future relevant sections
 | 2026-08-12 | Implemented Promotions section with image block | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review Promotions section visually |
 | 2026-08-12 | Merged APK sections into unified conversion block | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review APK section visually |
 | 2026-08-12 | Removed FAQ CTA and footer FAQ link | index.html, assets/css/style.css, PROJECT_PROGRESS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Phase 03 — Homepage (IN PROGRESS) | Continue homepage refinement |
+| 2026-08-13 | Confirmed Promotions source data added to project blueprint for future /promotions/ page implementation | progress-workflow/PROJECT_BLUEPRINT.md | Documentation | Promotions page source data stored for future implementation |
+| 2026-08-13 | Implemented homepage SEO, Platform section, expanded FAQ, and global CSS spacing system | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review updated homepage visually |
+| 2026-08-13 | Reorganized carousel banner assets and added branding carousel slide | assets/images/, index.html | Phase 03 — Homepage (IN PROGRESS) | Verify carousel and assets visually |

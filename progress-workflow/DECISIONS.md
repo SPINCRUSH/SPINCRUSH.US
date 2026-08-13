@@ -26,6 +26,14 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
 - Unnecessary frameworks/libraries are **avoided**.
 - Site must remain **lightweight** and **mobile-first**.
 - Internal URLs use the **trailing-slash convention** (e.g., `/games/`, `/promotions/`, `/help/`, `/install/`, `/download-help/`, `/contact/`, `/privacy/`, `/terms/`, `/disclaimer/`).
+- Homepage carousel uses 3 slides: branding image, Jackpot Lotto, Referral Bonus.
+- Carousel banner images are stored in `assets/images/banners/promotions/`.
+- Homepage includes a Platform section covering Mobile Access, Profile, Leaderboard, Support, and Payment Options.
+- Homepage FAQ expanded to 6 items and wrapped in a panel.
+- Footer brand description updated to include YONO slots messaging.
+- Homepage SEO baseline implemented: title, meta description, canonical URL, Open Graph, Twitter Card, JSON-LD structured data.
+- Global CSS custom properties implemented for spacing, panel colors, shadows, and pill radius.
+- Key homepage images include width and height attributes to prevent layout shift.
 
 ---
 

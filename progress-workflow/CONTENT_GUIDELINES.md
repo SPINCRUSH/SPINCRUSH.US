@@ -36,12 +36,13 @@
 
 "YONO" means "You Only Need One."
 
-Treat YONO only as a possible brand messaging concept.
+YONO is used as brand messaging in homepage copy.
 Do not present it as a factual, legal, or verified claim.
 
 ## PAYMENT
 
-Do not state that UPI, IMPS, Crypto, or USDT are available unless availability is explicitly confirmed later.
+Payment methods (UPI, IMPS, Crypto, USDT) are listed on the homepage Platform section and FAQ as supported options.
+Do not make additional availability claims beyond what is presented on the homepage.
 
 ## DO NOT INVENT
 
