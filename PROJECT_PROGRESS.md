@@ -133,13 +133,21 @@ Planned:
 - [ ] Contact Us
 
 ### Phase 07 — Legal
-**Status:** NOT STARTED
+**Status:** COMPLETE / LOCKED
 
-Planned:
-- [ ] Privacy Policy
-- [ ] Terms & Conditions
-- [ ] Disclaimer
-- [ ] Copyright / DMCA review before launch
+Completed:
+- [x] Privacy Policy (`/privacy.html`)
+- [x] Terms & Conditions (`/terms.html`)
+- [x] Disclaimer (`/disclaimer.html`)
+- [x] Contact page (`/contact.html`) — supporting trust/contact page
+- [x] Legal/trust architecture finalized
+- [x] No remaining blocker in the legal/trust area
+- [x] Responsible Gaming page — NOT NEEDED FOR CURRENT WEBSITE SCOPE
+
+Notes:
+- SPINCRUSH.US is documented as an informational/gaming information and APK-download platform.
+- The website does not operate a backend real-money gaming account system and does not provide website-side deposits, withdrawals, wagering, or user balance functionality.
+- If the APK's actual functionality, operator status, jurisdiction, licensing, or real-money gaming capabilities change, legal/compliance review must be reopened.
 
 ### Phase 08 — SEO
 **Status:** NOT STARTED

@@ -95,9 +95,16 @@ This wording may be refined later.
 - Contact Us
 
 ### Legal
-- Privacy Policy
-- Terms & Conditions
-- Disclaimer
+- Privacy Policy (`/privacy.html`) — FINAL / LOCKED
+- Terms & Conditions (`/terms.html`) — FINAL / LOCKED
+- Disclaimer (`/disclaimer.html`) — FINAL / LOCKED
+- Contact Us (`/contact.html`) — supporting trust/contact page
+
+### Responsible Gaming
+- NOT required for current website scope.
+- SPINCRUSH.US is an informational/gaming information and APK-download platform. It does not operate a backend real-money gaming account system and does not provide website-side deposits, withdrawals, wagering, or user balance functionality.
+- Do not create a Responsible Gaming page unless project scope and verified legal/compliance requirements justify it.
+- If the APK's actual functionality, operator status, jurisdiction, licensing, or real-money gaming capabilities change, legal/compliance review must be reopened.
 
 ### DMCA
 Do not create a DMCA page unless a real requirement is identified later.

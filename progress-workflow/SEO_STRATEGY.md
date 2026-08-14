@@ -13,8 +13,15 @@ This document records SEO strategy and current implementation status.
 - Image width and height attributes added for CLS prevention.
 - Internal linking strategy implemented (contextual links to `/`, `/promotions/`, `/games/`, `/spin-crush-apk/`).
 
+### Legal Pages (2026-08-14)
+- Privacy Policy, Terms & Conditions, and Disclaimer are **finalized and locked**.
+- Canonical URLs, Open Graph, Twitter Card, and JSON-LD implemented on all legal pages.
+- Robots meta tag (`index, follow`) implemented on legal pages.
+- Legal pages must not receive SEO-driven or marketing-driven copy changes.
+- Any future legal changes must be based on verified facts and documented project requirements.
+
 ### Not Yet Implemented
-- Robots meta tag / robots.txt
+- Robots meta tag / robots.txt (site-wide, beyond legal pages)
 - XML sitemap
 - hreflang annotations
 - Structured data for future pages (SoftwareApplication, FAQPage)

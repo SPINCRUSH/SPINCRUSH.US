@@ -48,6 +48,13 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
   - `/contact.html`
   - Legal pages: privacy, terms, disclaimer — created as root-level `.html`
   - Contact: email verified from homepage JSON-LD (`hanakusnadi178@gmail.com`)
+- Legal & Trust pages are **FINAL / LOCKED**:
+  - Locked pages: `/privacy.html`, `/terms.html`, `/disclaimer.html`, `/contact.html`
+  - No Responsible Gaming page is required for the current website scope.
+  - SPINCRUSH.US is an informational/gaming information and APK-download platform. It does not operate a backend real-money gaming account system and does not provide website-side deposits, withdrawals, wagering, or user balance functionality.
+  - Future changes involving real-money gambling operations, accounts, deposits, withdrawals, wagering, licensing, or jurisdiction must trigger a new legal/compliance review.
+  - Existing legal pages must not receive SEO-driven or marketing-driven legal copy changes.
+  - Any future legal changes must be based on verified facts and documented project requirements.
 
 ---
 

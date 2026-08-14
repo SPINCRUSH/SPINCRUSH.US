@@ -60,3 +60,11 @@ Do not create or claim the existence of:
 - Download details
 
 unless verified or explicitly provided later.
+
+## LEGAL PAGES
+
+- Legal pages (`/privacy.html`, `/terms.html`, `/disclaimer.html`, `/contact.html`) are **FINAL / LOCKED**.
+- Do not introduce unverified gambling, licensing, regulatory, compliance, or legal claims.
+- Do not create Responsible Gaming content unless project scope and verified legal/compliance requirements justify it.
+- Preserve the distinction between the website's informational/APK-download role and any functionality that may exist inside the APK.
+- If the APK's actual functionality, operator status, jurisdiction, licensing, or real-money gaming capabilities change, legal/compliance review must be reopened.
