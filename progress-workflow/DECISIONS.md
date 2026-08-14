@@ -63,6 +63,11 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
   - Future internal links, canonical URLs, og:url, JSON-LD URLs, sitemap entries, and navigation links for non-legal sections MUST use the folder URL (e.g. `/games/`, not `/games.html`).
   - Legal pages continue using their `.html` URLs.
   - Existing non-legal root-level `.html` pages, if any, must be reviewed and migrated to the folder/index.html architecture before final page freeze. This migration is a separate implementation task.
+- URL architecture implementation audit completed (2026-08-14).
+  - `contact.html` internal links corrected: all non-legal relative `.html` links replaced with locked directory URLs (`/games/`, `/promotions/`, `/promo-code/`, `/help/`, `/install/`, `/download-help/`, `/spin-crush-apk/`).
+  - `games/index.html` asset paths corrected: all relative `assets/...` references converted to root-absolute `/assets/...` paths for correct resolution under `/games/`.
+  - Canonical, OG, and JSON-LD URL architecture audited and found correct across all existing HTML files.
+  - URL architecture is now treated as locked for all future page development.
 
 ---
 

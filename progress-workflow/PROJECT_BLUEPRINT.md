@@ -236,6 +236,13 @@ Footer:
 
 URL architecture finalized and locked. Non-legal pages use folder/index.html with directory-based public URLs; legal/trust pages retain root-level .html URLs. Migration of any existing non-legal root-level pages remains a separate implementation task.
 
+### Implementation Audit (2026-08-14)
+
+- `contact.html` internal links corrected: all non-legal relative `.html` links replaced with locked directory URLs.
+- `games/index.html` asset paths corrected: relative `assets/...` references converted to root-absolute `/assets/...` paths.
+- Canonical, OG, and JSON-LD URL architecture audited and found correct across all existing HTML files.
+- URL architecture is now treated as locked for all future page development.
+
 ## DEVELOPMENT PHASES
 
 ### Phase 01 — Foundation
