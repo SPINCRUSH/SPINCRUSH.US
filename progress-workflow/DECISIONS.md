@@ -56,6 +56,13 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
   - Future changes involving real-money gambling operations, accounts, deposits, withdrawals, wagering, licensing, or jurisdiction must trigger a new legal/compliance review.
   - Existing legal pages must not receive SEO-driven or marketing-driven legal copy changes.
   - Any future legal changes must be based on verified facts and documented project requirements.
+- **URL architecture finalized and locked.**
+  - Legal/trust pages remain root-level `.html` URLs: `/privacy.html`, `/terms.html`, `/disclaimer.html`, `/contact.html` — LOCKED, must NOT migrate into folders.
+  - All non-legal content pages use directory URLs backed by `index.html`: `/games/`, `/promotions/`, `/promo-code/`, `/help/`, `/install/`, `/download-help/`, `/spin-crush-apk/`.
+  - The `.html` filename must NOT appear in public URLs for non-legal pages.
+  - Future internal links, canonical URLs, og:url, JSON-LD URLs, sitemap entries, and navigation links for non-legal sections MUST use the folder URL (e.g. `/games/`, not `/games.html`).
+  - Legal pages continue using their `.html` URLs.
+  - Existing non-legal root-level `.html` pages, if any, must be reviewed and migrated to the folder/index.html architecture before final page freeze. This migration is a separate implementation task.
 
 ---
 
@@ -70,11 +77,7 @@ For long-term architecture, see `PROJECT_BLUEPRINT.md`.
 - Planned support pages:
   - `/install/`
   - `/download-help/`
-  - `/contact/`
-- Planned legal pages:
-  - `/privacy/`
-  - `/terms/`
-  - `/disclaimer/`
+  - `/contact.html` (Legal & Trust — locked root-level `.html`)
 
 ---
 

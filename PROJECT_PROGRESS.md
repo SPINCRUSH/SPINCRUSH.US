@@ -28,6 +28,62 @@ The site uses a global-page structure:
 
 ---
 
+## URL Architecture (FINALIZED & LOCKED)
+
+SPINCRUSH.US uses a dual URL architecture:
+
+- Legal/trust pages remain root-level `.html` URLs.
+- All non-legal content pages use directory URLs backed by `index.html`.
+
+This architecture is intentional and must be preserved for all future pages.
+
+### LEGAL / TRUST (root-level `.html`)
+
+These pages are LOCKED and must NOT be migrated into folders.
+
+| File | Public URL |
+|---|---|
+| privacy.html | /privacy.html |
+| terms.html | /terms.html |
+| disclaimer.html | /disclaimer.html |
+| contact.html | /contact.html |
+
+### NON-LEGAL CONTENT (folder/index.html)
+
+The `.html` filename must NOT appear in public URLs for non-legal pages.
+
+| File | Public URL |
+|---|---|
+| games/index.html | /games/ |
+| promotions/index.html | /promotions/ |
+| promo-code/index.html | /promo-code/ |
+| help/index.html | /help/ |
+| install/index.html | /install/ |
+| download-help/index.html | /download-help/ |
+| spin-crush-apk/index.html | /spin-crush-apk/ |
+
+### MIGRATION NOTE
+
+Existing non-legal root-level `.html` pages, if any, must be reviewed and migrated to the folder/index.html architecture before final page freeze. This migration is NOT part of the documentation update.
+
+### LINK & METADATA RULE
+
+All future internal links, canonical URLs, og:url, JSON-LD URLs, sitemap entries, and navigation links for non-legal sections MUST use the public folder URL:
+
+/games/
+
+NOT:
+
+/games.html
+
+Legal pages continue using their `.html` URLs.
+
+### Changelog
+
+URL architecture finalized and locked. Non-legal pages use folder/index.html with directory-based public URLs; legal/trust pages retain root-level .html URLs. Migration of any existing non-legal root-level pages remains a separate implementation task.
+
+---
+
 ## Development Rules
 
 - Build component-by-component.
@@ -565,3 +621,4 @@ html {
 | 2026-08-13 | FROZEN: Language switcher positioning changed from sticky to fixed overlay | assets/css/style.css, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Phase 03 — Homepage (IN PROGRESS) | Carousel no longer pushed down by lang-switcher; scroll-padding-top and main min-height adjusted; no HTML/JS changes |
 | 2026-08-13 | Created Legal & Trust pages: privacy.html, terms.html, disclaimer.html, contact.html; updated footer links to direct .html URLs | index.html, assets/css/style.css, privacy.html, terms.html, disclaimer.html, contact.html, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Phase 06 — Legal (STARTED) / Phase 05 — Support (STARTED) | Verify pages render consistently with homepage template |
 | 2026-08-14 | FROZEN: Navigation color fix — prevented `a:visited` from overriding navbar/footer link colors | assets/css/style.css, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/CONTENT_GUIDELINES.md | Phase 02 — Global UI (COMPLETE / LOCKED) | No further navigation color changes; active-page styling not introduced |
+| 2026-08-14 | URL architecture finalized and locked in documentation; no code/HTML changes | progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md, PROJECT_PROGRESS.md, progress-workflow/SEO_STRATEGY.md | Documentation | Verify no HTML/CSS/JS files changed; no files created, renamed, moved, or committed |

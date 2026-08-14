@@ -154,6 +154,88 @@ Do not add payment UI yet.
 
 Do not create these pages until their development phase.
 
+## URL ARCHITECTURE (FINALIZED & LOCKED)
+
+SPINCRUSH.US uses a dual URL architecture:
+
+- Legal/trust pages remain root-level `.html` URLs.
+- All non-legal content pages use directory URLs backed by `index.html`.
+
+This architecture is intentional and must be preserved for all future pages.
+
+### LEGAL / TRUST (root-level `.html`)
+
+These pages are LOCKED and must NOT be migrated into folders.
+
+| File | Public URL |
+|---|---|
+| privacy.html | /privacy.html |
+| terms.html | /terms.html |
+| disclaimer.html | /disclaimer.html |
+| contact.html | /contact.html |
+
+### NON-LEGAL CONTENT (folder/index.html)
+
+The `.html` filename must NOT appear in public URLs for non-legal pages.
+
+| File | Public URL |
+|---|---|
+| games/index.html | /games/ |
+| promotions/index.html | /promotions/ |
+| promo-code/index.html | /promo-code/ |
+| help/index.html | /help/ |
+| install/index.html | /install/ |
+| download-help/index.html | /download-help/ |
+| spin-crush-apk/index.html | /spin-crush-apk/ |
+
+### MIGRATION NOTE
+
+Existing non-legal root-level `.html` pages, if any, must be reviewed and migrated to the folder/index.html architecture before final page freeze. This migration is NOT part of the documentation update.
+
+### LINK & METADATA RULE
+
+All future internal links, canonical URLs, og:url, JSON-LD URLs, sitemap entries, and navigation links for non-legal sections MUST use the public folder URL:
+
+/games/
+
+NOT:
+
+/games.html
+
+Legal pages continue using their `.html` URLs.
+
+### Navigation Targets
+
+Navbar:
+
+| Label | Target |
+|---|---|
+| Home | / |
+| Games | /games/ |
+| Promotions | /promotions/ |
+| Promo Code | /promo-code/ |
+| APK | /spin-crush-apk/ |
+| Help | /help/ |
+
+Footer:
+
+| Label | Target |
+|---|---|
+| Home | / |
+| Games | /games/ |
+| Promotions | /promotions/ |
+| Spin Crush APK | /spin-crush-apk/ |
+| How to Install | /install/ |
+| Download Help | /download-help/ |
+| Contact | /contact.html |
+| Privacy | /privacy.html |
+| Terms | /terms.html |
+| Disclaimer | /disclaimer.html |
+
+### Changelog
+
+URL architecture finalized and locked. Non-legal pages use folder/index.html with directory-based public URLs; legal/trust pages retain root-level .html URLs. Migration of any existing non-legal root-level pages remains a separate implementation task.
+
 ## DEVELOPMENT PHASES
 
 ### Phase 01 — Foundation

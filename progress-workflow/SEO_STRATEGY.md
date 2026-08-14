@@ -64,6 +64,11 @@ This document records SEO strategy and current implementation status.
 - Use hyphens for word separation.
 - Primary APK page: `/spin-crush-apk/`
 - Avoid changing URLs once published without proper redirects.
+- **Dual URL architecture (finalized & locked):**
+  - Legal/trust pages remain root-level `.html` URLs: `/privacy.html`, `/terms.html`, `/disclaimer.html`, `/contact.html`.
+  - All non-legal content pages use directory URLs (trailing slash, backed by `index.html`): `/games/`, `/promotions/`, `/promo-code/`, `/help/`, `/install/`, `/download-help/`, `/spin-crush-apk/`.
+  - The `.html` filename must NOT appear in public URLs for non-legal pages.
+  - Canonical, og:url, JSON-LD, sitemap, and internal-link URLs must use the folder URL for non-legal pages (e.g. `/games/`) and the `.html` URL for legal pages (e.g. `/privacy.html`).
 
 ## TITLE / META PRINCIPLES
 
@@ -98,6 +103,9 @@ This document records SEO strategy and current implementation status.
 - Every future page should have a canonical URL.
 - APK page canonical: `/spin-crush-apk/`
 - Avoid duplicate content across URLs.
+- Canonical URL conventions (finalized & locked):
+  - Non-legal pages: canonical must be the directory URL (e.g. `https://spincrush.us/games/`), NOT `/games.html`.
+  - Legal pages: canonical must be the root-level `.html` URL (e.g. `https://spincrush.us/privacy.html`).
 
 ## OPEN GRAPH PLANNING
 
