@@ -53,6 +53,7 @@ Global header and footer must remain consistent across all pages.
 - APK
 - Help
 - Download APK CTA
+- Visited links must remain muted gray; generic `a:visited` green must NOT apply to navbar links.
 
 ### APK URL
 - `/spin-crush-apk/`
@@ -88,6 +89,7 @@ This wording may be refined later.
 - Games
 - Promotions
 - Spin Crush APK
+- Visited links must remain muted gray; generic `a:visited` green must NOT apply to footer links.
 
 ### Help
 - How to Install

@@ -114,7 +114,7 @@ button:focus-visible {
     list-style: none;
 }
 
-.navbar__link {
+a.navbar__link {
     text-decoration: none;
     color: var(--color-text-muted);
     font-size: 0.9375rem;
@@ -380,7 +380,7 @@ button:focus-visible {
     gap: 0.625rem;
 }
 
-.site-footer__link {
+a.site-footer__link {
     color: var(--color-text-muted);
     text-decoration: none;
     font-size: 0.9375rem;

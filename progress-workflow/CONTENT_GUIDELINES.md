@@ -24,6 +24,7 @@
 - Avoid generic AI-sounding copy
 - Avoid exaggerated claims
 - Avoid unsupported claims
+- Navigation links (navbar/footer) must remain muted gray when visited; do not apply the generic green accent color to visited navigation links.
 
 ## SEO
 
