@@ -17,7 +17,23 @@
     }
 })();
 
-// Carousel
+// APK Download Tracking
+(function () {
+    'use strict';
+
+    document.addEventListener('click', function (event) {
+        var link = event.target.closest('a');
+        if (!link) return;
+        var href = link.getAttribute('href') || '';
+        if (href.indexOf('spincrush.apk') === -1) return;
+        if (typeof gtag === 'function') {
+            gtag('event', 'apk_download', {
+                event_category: 'download',
+                event_label: 'Spin Crush APK'
+            });
+        }
+    });
+})();
 (function () {
     'use strict';
 

@@ -25,7 +25,7 @@ This document records SEO strategy and current implementation status.
 - XML sitemap
 - hreflang annotations
 - Structured data for future pages (SoftwareApplication, FAQPage)
-- SEO for future core pages (/games/, /promotions/, /spin-crush-apk/, /help/)
+- SEO for future core pages (/games/, /promotions/, spin-crush-apk/)
 
 ## PRIMARY KEYWORDS
 
@@ -48,13 +48,13 @@ This document records SEO strategy and current implementation status.
 
 ### Secondary Intent
 - Gaming-related queries (slots, casino, online games)
-- Help/install queries
+- Install queries
 - Promotions/bonuses queries
 
 ## KEYWORD MAPPING PRINCIPLES
 
 - Map primary keywords to high-priority pages (homepage, APK page).
-- Map secondary keywords to relevant content sections (games, promotions, help).
+- Map secondary keywords to relevant content sections (games, promotions).
 - Avoid keyword cannibalization across pages.
 - Maintain a logical hierarchy: homepage -> category pages -> detail pages.
 
@@ -66,14 +66,14 @@ This document records SEO strategy and current implementation status.
 - Avoid changing URLs once published without proper redirects.
 - **Dual URL architecture (finalized & locked):**
   - Legal/trust pages remain root-level `.html` URLs: `/privacy.html`, `/terms.html`, `/disclaimer.html`, `/contact.html`.
-  - All non-legal content pages use directory URLs (trailing slash, backed by `index.html`): `/games/`, `/promotions/`, `/promo-code/`, `/help/`, `/install/`, `/download-help/`, `/spin-crush-apk/`.
+   - All non-legal content pages use directory URLs (trailing slash, backed by `index.html`): `/games/`, `/promotions/`, `/promo-code/`, `/install/`, `/download-help/`, `/spin-crush-apk/`.
   - The `.html` filename must NOT appear in public URLs for non-legal pages.
    - Canonical, og:url, JSON-LD, sitemap, and internal-link URLs must use the folder URL for non-legal pages (e.g. `/games/`) and the `.html` URL for legal pages (e.g. `/privacy.html`).
 
 ### URL Architecture Implementation Audit (2026-08-14)
 
 - `contact.html` internal links corrected: all non-legal relative `.html` links replaced with locked directory URLs.
-- `games/index.html` asset paths corrected: relative `assets/...` references converted to root-absolute `/assets/...` paths.
+- `games/index.html` asset paths corrected: root-absolute `/assets/...` references converted to filesystem-relative `../assets/...` paths.
 - Canonical, OG, and JSON-LD URL architecture audited and found correct across all existing HTML files.
 - URL architecture is now treated as locked for all future page development.
 
@@ -95,7 +95,7 @@ This document records SEO strategy and current implementation status.
 - Link between related pages using descriptive anchor text.
 - Ensure every important page is reachable from the navigation or footer.
 - Use breadcrumbs where helpful.
-- Link naturally from content sections to the APK page and help pages.
+- Link naturally from content sections to the APK page.
 
 ## IMAGE ALT TEXT
 
@@ -129,7 +129,7 @@ This document records SEO strategy and current implementation status.
   - WebPage
 - Plan JSON-LD structured data for future pages:
   - SoftwareApplication (for APK page)
-  - FAQPage (for help/FAQ sections)
+  - FAQPage (for FAQ sections)
 
 ## HREFLANG PLANNING
 

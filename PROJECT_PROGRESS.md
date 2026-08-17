@@ -78,9 +78,86 @@ NOT:
 
 Legal pages continue using their `.html` URLs.
 
+### MASTER TEMPLATE RULE (LOCKED)
+
+`index.html` is the **MASTER PAGE TEMPLATE** for all future public non-legal pages.
+
+Before creating or modifying any future public page, the implementation MUST:
+
+1. Read `progress-workflow/PROJECT_BLUEPRINT.md`
+2. Read `progress-workflow/DECISIONS.md`
+3. Read `PROJECT_PROGRESS.md`
+4. Inspect `index.html` as the MASTER TEMPLATE
+5. Reuse the established homepage template architecture
+
+### LOCKED MASTER TEMPLATE COMPONENTS
+
+The following components MUST be inherited from `index.html` for every future public non-legal page:
+
+- HTML document structure
+- `<head>` structure
+- SEO metadata pattern
+- canonical pattern
+- Open Graph pattern
+- Twitter metadata pattern
+- JSON-LD architecture
+  - WebSite entity
+  - Organization entity
+  - WebPage entity
+- navbar
+- logo
+- language switcher
+- mobile navigation
+- APK CTA
+- footer
+- footer columns
+- accessibility attributes
+- filesystem-relative asset path convention
+- global internal-link architecture
+
+### HOMEPAGE-ONLY COMPONENTS
+
+The following remain **exclusive to `index.html`** unless the blueprint explicitly says otherwise:
+
+- Homepage carousel
+- Homepage promotions section
+- Homepage platform section
+- Homepage FAQ section
+
+### NON-HOMEPAGE PAGES
+
+A non-homepage page may omit homepage-only sections while still inheriting the master template's:
+
+- Head architecture
+- SEO structure
+- JSON-LD entity architecture
+- navbar
+- language switcher
+- main layout system
+- APK conversion section where applicable
+- footer
+- accessibility conventions
+- filesystem-relative asset conventions
+- URL architecture
+
+### FIRST IMPLEMENTATION EXAMPLE
+
+`/games/` (`games/index.html`) has already been synchronized with the master template as the first implementation example.
+
+All future non-legal pages must follow the same pattern.
+
 ### Changelog
 
 URL architecture finalized and locked. Non-legal pages use folder/index.html with directory-based public URLs; legal/trust pages retain root-level .html URLs. Migration of any existing non-legal root-level pages remains a separate implementation task.
+
+### Asset Path Architecture (LOCKED)
+
+Asset references must be relative to the actual filesystem location of the HTML document:
+- Root-level files: `assets/...`
+- One-level directory files: `../assets/...`
+- Two-level directory files: `../../assets/...`
+
+The public URL does not determine the relative asset prefix; the physical filesystem depth determines it. This applies to CSS, JS, images, favicon, fonts, downloads, and all local assets. Structured data, Open Graph, and Twitter Card image URLs may use absolute URLs.
 
 ---
 
@@ -319,7 +396,7 @@ SPINCRUSH.US/
 - Carousel visible CTA buttons removed; promotional banners made clickable and link to `/promotions/`
 - Homepage H1 below carousel: "Spin Crush 🚀 YONO Slots Online with First Deposit Bonus & Daily Rewards"
 - Homepage intro paragraph with contextual internal link to homepage
-- "Explore Spin Crush Games" section with three linked category cards: Slots (`/games/slots/`), Casino Games (`/games/casino/`), Rummy (`/games/rummy/`), plus "View All Games" (`/games/`)
+- "Explore Spin Crush Games" section with three linked category cards: Slots (`/games/slots/`), Casino Games (`/games/casino-games/`), Rummy (`/games/rummy/`), plus "View All Games" (`/games/`)
 - "Spin Crush Promotions" section with inner wrapper (content + media), promotional highlights (4 blocks), promotional image, and `/promotions/` CTA
 - "Explore the Spin Crush Platform" section with 5 content blocks: Mobile Access, Your Profile, Leaderboard, Support & Help, Payment Options
 - "Get Spin Crush APK" unified conversion block with:
@@ -623,3 +700,47 @@ html {
 | 2026-08-14 | FROZEN: Navigation color fix — prevented `a:visited` from overriding navbar/footer link colors | assets/css/style.css, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/CONTENT_GUIDELINES.md | Phase 02 — Global UI (COMPLETE / LOCKED) | No further navigation color changes; active-page styling not introduced |
 | 2026-08-14 | URL architecture finalized and locked in documentation; no code/HTML changes | progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md, PROJECT_PROGRESS.md, progress-workflow/SEO_STRATEGY.md | Documentation | Verify no HTML/CSS/JS files changed; no files created, renamed, moved, or committed |
 | 2026-08-14 | URL architecture implementation audit completed and corrections applied | contact.html, games/index.html, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/SEO_STRATEGY.md | URL Architecture — IMPLEMENTED / LOCKED | Future pages must follow locked directory URL convention |
+| 2026-08-14 | Master template rule locked: index.html is the master template for all future public non-legal pages | PROJECT_PROGRESS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Documentation — MASTER TEMPLATE LOCKED | Future pages must inherit template architecture from index.html; /games/ synchronized as first implementation example |
+| 2026-08-14 | Asset path architecture locked: filesystem-relative paths enforced for all local assets | games/index.html, PROJECT_PROGRESS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Documentation — ASSET PATH ARCHITECTURE LOCKED | Future pages must use filesystem-relative asset paths based on HTML file depth; /games/ uses ../assets/ |
+| 2026-08-12 | Completed homepage foundation and updated project blueprint | index.html, assets/css/style.css, progress-workflow/PROJECT_BLUEPRINT.md | Phase 03 — Homepage (IN PROGRESS) | Begin homepage sections |
+| 2026-08-12 | Synced project progress and decisions | PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Documentation | Continue development |
+| 2026-08-12 | Updated project documentation | PROJECT_PROGRESS.md, progress-workflow/*.md | Documentation | Continue development |
+| 2026-08-12 | Built Phase 03 homepage carousel | index.html, assets/css/style.css, assets/js/script.js | Phase 03 — Homepage (IN PROGRESS) | Plan/build next homepage section |
+| 2026-08-12 | Integrated Phase 03 carousel banners | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review carousel visually |
+| 2026-08-12 | Built Phase 03.2 What is Spin Crush section | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review section visually |
+| 2026-08-12 | Added homepage H1 | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review heading hierarchy |
+| 2026-08-12 | Refined Phase 03 homepage opening | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Audit opening visually |
+| 2026-08-12 | Prototyped animated green card borders | assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Evaluate visual treatment |
+| 2026-08-12 | Improved mobile navbar APK CTA | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Continue layout work |
+| 2026-08-12 | Refined animated green card border | assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Evaluate visual treatment |
+| 2026-08-12 | Fixed animated green card outline | assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Verify card visuals |
+| 2026-08-12 | Refined Phase 03.5 animated card border | assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Verify border visuals |
+| 2026-08-12 | Refined promotional carousel interaction | index.html, assets/css/style.css, assets/js/script.js | Phase 03 — Homepage (IN PROGRESS) | Verify carousel behavior |
+| 2026-08-13 | FROZEN: Language switcher positioning frozen | assets/css/style.css, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md | Phase 03 — Homepage (IN PROGRESS) | No HTML/JS changes needed |
+| 2026-08-13 | Created Legal & Trust pages | privacy.html, terms.html, disclaimer.html, contact.html, index.html | Phase 06 — Legal (COMPLETE) | Verify pages render correctly |
+| 2026-08-13 | Locked legal and trust pages | PROJECT_PROGRESS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Documentation — LEGAL LOCKED | No further legal changes |
+| 2026-08-13 | Reorganized carousel banner assets | assets/images/, index.html | Phase 03 — Homepage (IN PROGRESS) | Verify carousel and assets |
+| 2026-08-13 | Implemented homepage SEO, Platform section, expanded FAQ, and global CSS spacing system | index.html, assets/css/style.css | Phase 03 — Homepage (IN PROGRESS) | Review updated homepage |
+| 2026-08-14 | Fixed navigation color override | assets/css/style.css, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/CONTENT_GUIDELINES.md | Phase 02 — Global UI (COMPLETE / LOCKED) | No further navigation color changes |
+| 2026-08-14 | Finalized URL architecture in docs | progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md, PROJECT_PROGRESS.md, progress-workflow/SEO_STRATEGY.md | Documentation | Verify no code changes needed |
+| 2026-08-14 | Implemented URL architecture corrections | contact.html, games/index.html, PROJECT_PROGRESS.md, progress-workflow/DECISIONS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/SEO_STRATEGY.md | URL Architecture — IMPLEMENTED / LOCKED | Future pages follow locked convention |
+| 2026-08-14 | Locked master template rule | PROJECT_PROGRESS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Documentation — MASTER TEMPLATE LOCKED | Future pages inherit from index.html |
+| 2026-08-14 | Locked asset path architecture | games/index.html, PROJECT_PROGRESS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Documentation — ASSET PATH ARCHITECTURE LOCKED | Future pages use filesystem-relative paths |
+| 2026-08-14 | Created 404 error page | 404.html, assets/css/style.css | Phase 03 — Homepage (COMPLETE) | 404 page branded and functional |
+| 2026-08-14 | Created robots.txt and sitemap.xml | robots.txt, sitemap.xml | Phase 08 — SEO (PARTIALLY COMPLETE) | Sitemap includes all public URLs |
+| 2026-08-14 | Created promo-code.js and styles | assets/js/promo-code.js, assets/css/style.css, promo-code/index.html | Phase 04 — Core Pages (COMPLETE) | Promo code generator functional |
+| 2026-08-14 | Added Google Analytics | index.html, all pages | Phase 08 — SEO (PARTIALLY COMPLETE) | gtag.js tracking active |
+| 2026-08-14 | Built Hindi homepage and legal pages | hi/index.html, hi/privacy.html, hi/terms.html, hi/disclaimer.html, hi/contact.html | Phase 09 — Hindi (STARTED) | Hindi content pages in progress |
+| 2026-08-14 | Built Hindi content pages | hi/games/index.html, hi/games/casino-games/index.html, hi/promotions/index.html, hi/promo-code/index.html, hi/spin-crush-apk/index.html | Phase 09 — Hindi (STARTED) | Hindi game detail pages pending |
+| 2026-08-14 | Expanded homepage carousel to 12 slides | index.html, assets/css/style.css, assets/js/script.js | Phase 03 — Homepage (COMPLETE) | All promotional banners linked |
+| 2026-08-14 | Added image-shine CSS effect | assets/css/style.css | Phase 03 — Homepage (COMPLETE) | Reusable visual effect |
+| 2026-08-14 | Added FAQPage structured data | index.html, games/casino-games/index.html, spin-crush-apk/index.html, promo-code/index.html | Phase 08 — SEO (PARTIALLY COMPLETE) | FAQ schema implemented |
+| 2026-08-14 | Added BreadcrumbList structured data | games/index.html, games/casino-games/index.html, games/casino-games/blackjack/index.html, games/casino-games/roulette/index.html, spin-crush-apk/index.html, promo-code/index.html | Phase 08 — SEO (PARTIALLY COMPLETE) | Breadcrumb schema implemented |
+| 2026-08-14 | Added ItemList structured data | promotions/index.html | Phase 08 — SEO (PARTIALLY COMPLETE) | ItemList schema for promotions |
+| 2026-08-14 | Added ContactPage structured data | contact.html | Phase 08 — SEO (PARTIALLY COMPLETE) | ContactPage schema implemented |
+| 2026-08-14 | Added PrivacyPolicy structured data | privacy.html | Phase 08 — SEO (PARTIALLY COMPLETE) | PrivacyPolicy schema implemented |
+| 2026-08-14 | Removed Help from global UI | index.html, PROJECT_PROGRESS.md, progress-workflow/PROJECT_BLUEPRINT.md, progress-workflow/DECISIONS.md | Phase 02 — Global UI (COMPLETE / LOCKED) | Help links removed from navbar and footer |
+| 2026-08-14 | Added APK download tracking | assets/js/script.js | Phase 05 — APK / Conversion (COMPLETE) | gtag event tracking for APK downloads |
+| 2026-08-14 | Added hidden utility class for promo-code.js | assets/css/style.css | Phase 04 — Core Pages (COMPLETE) | Required by promo-code.js |
+| 2026-08-14 | Updated footer across all pages | all HTML files | Phase 02 — Global UI (COMPLETE / LOCKED) | Help column removed; Contact added to legal pages |
+| 2026-08-14 | Updated legal pages with full SEO and structured data | privacy.html, terms.html, disclaimer.html, contact.html | Phase 07 — Legal (COMPLETE / LOCKED) | Legal pages fully synchronized with master template |

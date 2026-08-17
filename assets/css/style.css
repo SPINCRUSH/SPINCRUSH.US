@@ -45,10 +45,6 @@ a {
     transition: color 0.2s ease;
 }
 
-a:visited {
-    color: var(--color-accent);
-}
-
 a:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px var(--color-accent);
@@ -449,23 +445,7 @@ main {
     padding-top: 0;
 }
 
-/* Page title (non-homepage) */
-.page-title {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: var(--section-padding-x) var(--section-padding-x) 0.75rem;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 700;
-    color: var(--color-text);
-    line-height: 1.2;
-}
 
-@media (max-width: 639px) {
-    .page-title {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
 
 /* Homepage title */
 .homepage-title {
@@ -795,9 +775,9 @@ main {
     justify-content: center;
 }
 
-.games__cta-link,
-.promotions__cta-link,
-.apk__cta-link {
+a.games__cta-link,
+a.promotions__cta-link,
+a.apk__cta-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -811,16 +791,16 @@ main {
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 
-.games__cta-link:hover,
-.promotions__cta-link:hover,
-.apk__cta-link:hover {
+a.games__cta-link:hover,
+a.promotions__cta-link:hover,
+a.apk__cta-link:hover {
     background-color: var(--color-accent-hover);
     transform: translateY(-1px);
 }
 
-.games__cta-link:focus-visible,
-.promotions__cta-link:focus-visible,
-.apk__cta-link:focus-visible {
+a.games__cta-link:focus-visible,
+a.promotions__cta-link:focus-visible,
+a.apk__cta-link:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px var(--color-accent);
 }
@@ -856,7 +836,7 @@ main {
         transition: none;
     }
 
-    .games__cta-link {
+    a.games__cta-link {
         transition: none;
     }
 }
@@ -973,7 +953,7 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .promotions__cta-link {
+    a.promotions__cta-link {
         transition: none;
     }
 }
@@ -1131,11 +1111,141 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .apk__cta-link {
+    a.apk__cta-link {
         transition: none;
     }
 
     .apk__intro a {
+        transition: none;
+    }
+}
+
+/* APK Hero */
+.apk-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem var(--section-padding-x);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .apk-hero {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 3rem;
+        padding: 4rem 2.5rem;
+    }
+}
+
+.apk-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.apk-hero__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    color: var(--color-text);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.apk-hero__intro {
+    color: var(--color-text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    max-width: 540px;
+}
+
+.apk-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.apk-hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-pill);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.apk-hero__btn:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+.apk-hero__btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.apk-hero__btn--secondary {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+}
+
+.apk-hero__btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #404040;
+}
+
+.apk-hero__visual {
+    display: flex;
+    justify-content: center;
+}
+
+.apk-hero__media {
+    position: relative;
+    background-color: #141414;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-panel);
+    aspect-ratio: 1 / 1;
+    max-width: min(360px, 85vw);
+    width: 100%;
+}
+
+.apk-hero__media-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1.5rem;
+}
+
+@media (max-width: 767px) {
+    .apk-hero {
+        padding: 2.5rem 1rem;
+        text-align: center;
+    }
+
+    .apk-hero__intro {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .apk-hero__actions {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .apk-hero__btn {
         transition: none;
     }
 }
@@ -1435,5 +1545,647 @@ main {
     .lang-switcher__option,
     .site-footer__link {
         transition: none;
+    }
+}
+
+
+
+
+
+/* ============================================================
+   GLOBAL CONTAINER UTILITY
+   Single source of truth for page width, centering, and
+   horizontal padding. Use this on any new page wrapper.
+
+   Canonical values:
+     max-width: 1200px
+     margin-left/right: auto
+     padding-left/right: var(--section-padding-x)
+
+   Existing selectors already match these horizontal values
+   and are aligned with this container:
+     .navbar__inner
+     .homepage-title
+     .carousel
+     .games
+     .promotions
+     .apk
+     .site-footer__inner
+     .site-footer__bottom
+     .breadcrumb
+     .promo-code-teaser
+
+   Do not add background, border-radius, colors, typography,
+   or section-specific spacing to this class.
+   ============================================================ */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--section-padding-x);
+    padding-right: var(--section-padding-x);
+}
+
+/* Featured game card placeholder */
+.games__card-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.games__card-initial {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+}
+
+/* Breadcrumb — global reusable component */
+.breadcrumb {
+    max-width: 1200px;
+    margin: 1rem auto 0.5rem;
+    padding: 0 var(--section-padding-x);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+.breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb li {
+    display: inline-flex;
+    align-items: center;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: "/";
+    margin-left: 0.5rem;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+}
+
+.breadcrumb a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-text);
+}
+
+.breadcrumb [aria-current="page"] {
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+@media (max-width: 639px) {
+    .breadcrumb {
+        margin-top: 0.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Promo card collapsible descriptions */
+.promo-card__toggle {
+    display: block;
+}
+
+.promo-card__summary {
+    list-style: none;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.promo-card__summary::-webkit-details-marker {
+    display: none;
+}
+
+.promo-card__summary:hover .promo-card__image {
+    opacity: 0.92;
+}
+
+.promo-card__text {
+    display: none;
+}
+
+.promo-card__toggle[open] + .promo-card__title + .promo-card__text {
+    display: block;
+}
+
+/* Promotions Directory */
+.promo-directory__heading {
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 3rem 0 1.25rem;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+}
+
+.promo-directory__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    align-items: start;
+}
+
+@media (min-width: 640px) {
+    .promo-directory__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .promo-directory__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+.promo-card {
+    background-color: #1a1a1a;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    scroll-margin-top: 5rem;
+}
+
+.promo-card__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.promo-card__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 1.25rem 1.25rem 0.5rem;
+    line-height: 1.3;
+}
+
+.promo-card__text {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin: 0 1.25rem 1.5rem;
+}
+
+.promo-code-teaser {
+    max-width: 1200px;
+    margin: var(--section-gap) auto;
+    padding: 4rem var(--section-padding-x) 3rem;
+    background: var(--color-panel);
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+}
+
+.promo-code-teaser__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 720px;
+}
+
+.promo-code-teaser__heading {
+    font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+    font-weight: 800;
+    color: var(--color-text);
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+}
+
+.promo-code-teaser__text {
+    color: var(--color-text-muted);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+}
+
+@media (min-width: 640px) {
+    .promo-code-teaser {
+        padding: 5rem 2rem 4rem;
+        border-radius: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .promo-code-teaser {
+        padding: 5.5rem 2.5rem 4rem;
+    }
+}
+
+.promo-directory {
+    max-width: 1200px;
+    margin: var(--section-gap) auto;
+    padding: 4rem var(--section-padding-x) 3rem;
+    background: var(--color-panel);
+    border-radius: 1rem;
+}
+
+@media (min-width: 640px) {
+    .promo-directory {
+        padding: 5rem 2rem 4rem;
+        border-radius: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .promo-directory {
+        padding: 5.5rem 2.5rem 4rem;
+    }
+}
+
+/* 404 Error Page */
+.error-hero {
+    min-height: calc(100vh - var(--navbar-height) - var(--lang-switcher-height) - 40px);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem var(--section-padding-x) 3rem;
+    display: grid;
+    place-items: center;
+    gap: 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.error-404 {
+    font-size: clamp(5rem, 16vw, 11rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--color-accent);
+    text-shadow:
+        0 0 20px rgba(22, 163, 74, 0.35),
+        0 0 50px rgba(22, 163, 74, 0.2),
+        0 0 80px rgba(22, 163, 74, 0.1);
+    margin: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
+.error-token {
+    --size: 96px;
+    width: var(--size);
+    height: var(--size);
+    max-width: 20vw;
+    max-height: 20vw;
+    margin: 0 auto;
+    background: radial-gradient(circle at 30% 30%, #222, var(--color-surface));
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 6px rgba(22, 163, 74, 0.15),
+        var(--shadow-panel);
+    display: inline-grid;
+    place-items: center;
+    color: var(--color-text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    animation: error-token-float 5s ease-in-out infinite;
+}
+
+.error-token:hover {
+    transform: scale(1.12) rotate(8deg);
+    box-shadow:
+        0 0 0 10px rgba(22, 163, 74, 0.25),
+        0 20px 34px -5px rgba(0, 0, 0, 0.45);
+}
+
+.error-token svg {
+    width: 52%;
+    height: 52%;
+    display: block;
+}
+
+.error-ornaments {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.error-particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    opacity: 0.08;
+    box-shadow: 0 0 8px rgba(22, 163, 74, 0.4);
+    animation: error-particle-drift 7s ease-in-out infinite;
+}
+
+.error-particle--1 {
+    width: 10px;
+    height: 10px;
+    top: 18%;
+    left: 12%;
+    animation-delay: 0s;
+}
+
+.error-particle--2 {
+    width: 14px;
+    height: 14px;
+    top: 14%;
+    right: 16%;
+    animation-delay: -0.5s;
+}
+
+.error-particle--3 {
+    width: 9px;
+    height: 9px;
+    bottom: 22%;
+    left: 9%;
+    animation-delay: -1s;
+}
+
+.error-particle--4 {
+    width: 12px;
+    height: 12px;
+    bottom: 16%;
+    right: 13%;
+    animation-delay: -1.5s;
+}
+
+.error-particle--5 {
+    width: 8px;
+    height: 8px;
+    top: 48%;
+    left: 6%;
+    animation-delay: -2s;
+}
+
+.error-particle--6 {
+    width: 11px;
+    height: 11px;
+    top: 52%;
+    right: 7%;
+    animation-delay: -2.5s;
+}
+
+@keyframes error-token-float {
+    0% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+    100% { transform: translateY(0) rotate(-1deg); }
+}
+
+@keyframes error-particle-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.06; }
+    50% { opacity: 0.12; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .error-token {
+        animation: none;
+        transition: none;
+    }
+
+    .error-particle {
+        animation: none;
+    }
+}
+
+.error-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+}
+
+.error-copy {
+    max-width: 720px;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.error-secondary a {
+    color: var(--color-text-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.error-secondary a:hover {
+    color: var(--color-accent);
+}
+
+.error-hint {
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+}
+
+/* Image shine — global reusable wrapper */
+.image-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-shine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.03) 45%,
+        rgba(255, 255, 255, 0.08) 50%,
+        rgba(255, 255, 255, 0.03) 55%,
+        transparent 60%
+    );
+    transform: translateX(-100%);
+    animation: image-shine 5s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes image-shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .image-shine::after {
+        animation: none;
+    }
+}
+
+/* Hidden utility — required by promo-code.js */
+.hidden {
+    display: none !important;
+}
+
+/* Promo Code page — hero content */
+.promo-hero {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: var(--section-padding-x);
+    text-align: center;
+}
+
+.promo-hero .apk__heading {
+    margin-bottom: 0.75rem;
+}
+
+.promo-hero .apk__intro {
+    margin: 0 auto 2rem;
+    max-width: 720px;
+}
+
+/* Promo Code banner — constrained, no card wrapper */
+.promo-banner {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.promo-banner img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    display: block;
+}
+
+/* Promo Code Generator */
+.promo-generator {
+    margin: 1.5rem auto;
+}
+
+.promo-generator__actions {
+    display: flex;
+    justify-content: center;
+}
+
+.promo-generator__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.875rem 2rem;
+    background-color: var(--color-accent);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-pill);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.promo-generator__btn:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
+}
+
+.promo-generator__btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.promo-generator__btn:disabled {
+    background-color: var(--color-text-muted);
+    cursor: default;
+}
+
+.promo-generator__btn:disabled:hover {
+    background-color: var(--color-text-muted);
+    transform: none;
+}
+
+.promo-generator__loading {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.promo-generator__spinner {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: promo-spinner-rotate 0.8s linear infinite;
+}
+
+@keyframes promo-spinner-rotate {
+    to { transform: rotate(360deg); }
+}
+
+.promo-generator__loading-text {
+    display: block;
+    margin-top: 0.75rem;
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+}
+
+.promo-generator__card {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background-color: #1a1a1a;
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.promo-generator__label {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.promo-generator__code {
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    letter-spacing: 0.05em;
+    word-break: break-all;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .promo-generator__btn {
+        transition: none;
+    }
+
+    .promo-generator__spinner {
+        animation: none;
     }
 }

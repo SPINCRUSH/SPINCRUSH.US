@@ -51,7 +51,6 @@ Global header and footer must remain consistent across all pages.
 - Games
 - Promotions
 - APK
-- Help
 - Download APK CTA
 - Visited links must remain muted gray; generic `a:visited` green must NOT apply to navbar links.
 
@@ -75,7 +74,6 @@ It is NOT part of the global header.
 Main areas:
 - Brand
 - Explore
-- Help
 - Legal
 
 Preferred current brand description:
@@ -90,11 +88,6 @@ This wording may be refined later.
 - Promotions
 - Spin Crush APK
 - Visited links must remain muted gray; generic `a:visited` green must NOT apply to footer links.
-
-### Help
-- How to Install
-- Download Help
-- Contact Us
 
 ### Legal
 - Privacy Policy (`/privacy.html`) — FINAL / LOCKED
@@ -121,7 +114,7 @@ Do not create a DMCA page unless a real requirement is identified later.
 These may later be used in:
 - Homepage
 - Spin Crush APK page
-- Help/payment-related sections
+- Support/payment-related sections
 
 IMPORTANT:
 These payment methods are planned/recorded requirements only.
@@ -137,7 +130,6 @@ Do not add payment UI yet.
 - `/games/`
 - `/promotions/`
 - `/spin-crush-apk/`
-- `/help/`
 
 ### Support
 - `/install/`
@@ -183,7 +175,6 @@ The `.html` filename must NOT appear in public URLs for non-legal pages.
 | games/index.html | /games/ |
 | promotions/index.html | /promotions/ |
 | promo-code/index.html | /promo-code/ |
-| help/index.html | /help/ |
 | install/index.html | /install/ |
 | download-help/index.html | /download-help/ |
 | spin-crush-apk/index.html | /spin-crush-apk/ |
@@ -215,7 +206,6 @@ Navbar:
 | Promotions | /promotions/ |
 | Promo Code | /promo-code/ |
 | APK | /spin-crush-apk/ |
-| Help | /help/ |
 
 Footer:
 
@@ -225,8 +215,6 @@ Footer:
 | Games | /games/ |
 | Promotions | /promotions/ |
 | Spin Crush APK | /spin-crush-apk/ |
-| How to Install | /install/ |
-| Download Help | /download-help/ |
 | Contact | /contact.html |
 | Privacy | /privacy.html |
 | Terms | /terms.html |
@@ -239,9 +227,119 @@ URL architecture finalized and locked. Non-legal pages use folder/index.html wit
 ### Implementation Audit (2026-08-14)
 
 - `contact.html` internal links corrected: all non-legal relative `.html` links replaced with locked directory URLs.
-- `games/index.html` asset paths corrected: relative `assets/...` references converted to root-absolute `/assets/...` paths.
+- `games/index.html` asset paths corrected: root-absolute `/assets/...` references converted to filesystem-relative `../assets/...` paths.
 - Canonical, OG, and JSON-LD URL architecture audited and found correct across all existing HTML files.
 - URL architecture is now treated as locked for all future page development.
+
+## ASSET PATH ARCHITECTURE (LOCKED)
+
+Asset references MUST be relative to the actual filesystem location of the HTML document.
+
+### Root
+
+Root-level HTML files (`index.html`, `privacy.html`, `terms.html`, `disclaimer.html`, `contact.html`):
+
+```html
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/script.js">
+<img src="assets/images/...">
+```
+
+### One-level directory
+
+One-level directory `index.html` files (e.g. `games/index.html`, `promotions/index.html`):
+
+```html
+<link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/script.js">
+<img src="../assets/images/...">
+```
+
+### Two-level directory
+
+Two-level directory `index.html` files (e.g. `games/slots/index.html`):
+
+```html
+<link rel="stylesheet" href="../../assets/css/style.css">
+<script src="../../assets/js/script.js">
+<img src="../../assets/images/...">
+```
+
+### Rules
+
+- The public URL does **not** determine the relative asset prefix.
+- The physical filesystem depth determines it.
+- This applies to all local assets: CSS, JS, images, favicon, fonts, downloads, and other local files.
+- Do not create duplicate asset directories inside page directories.
+- Structured data, Open Graph, and Twitter Card image URLs may use absolute URLs (`https://spincrush.us/assets/...`) because they are consumed by external crawlers and social platforms.
+
+## MASTER TEMPLATE RULE (LOCKED)
+
+`index.html` is the **MASTER PAGE TEMPLATE** for all future public non-legal pages.
+
+Before creating or modifying any future public page, the implementation MUST:
+
+1. Read `progress-workflow/PROJECT_BLUEPRINT.md`
+2. Read `progress-workflow/DECISIONS.md`
+3. Read `PROJECT_PROGRESS.md`
+4. Inspect `index.html` as the MASTER TEMPLATE
+5. Reuse the established homepage template architecture
+
+### LOCKED MASTER TEMPLATE COMPONENTS
+
+The following components MUST be inherited from `index.html` for every future public non-legal page:
+
+- HTML document structure
+- `<head>` structure
+- SEO metadata pattern
+- canonical pattern
+- Open Graph pattern
+- Twitter metadata pattern
+- JSON-LD architecture
+  - WebSite entity
+  - Organization entity
+  - WebPage entity
+- navbar
+- logo
+- language switcher
+- mobile navigation
+- APK CTA
+- footer
+- footer columns
+- accessibility attributes
+- global asset path convention
+- global internal-link architecture
+
+### HOMEPAGE-ONLY COMPONENTS
+
+The following remain **exclusive to `index.html`** unless the blueprint explicitly says otherwise:
+
+- Homepage carousel
+- Homepage promotions section
+- Homepage platform section
+- Homepage FAQ section
+
+### NON-HOMEPAGE PAGES
+
+A non-homepage page may omit homepage-only sections while still inheriting the master template's:
+
+- Head architecture
+- SEO structure
+- JSON-LD entity architecture
+- navbar
+- language switcher
+- main layout system
+- APK conversion section where applicable
+- footer
+- accessibility conventions
+- asset conventions
+- URL architecture
+
+### FIRST IMPLEMENTATION EXAMPLE
+
+`/games/` (`games/index.html`) has already been synchronized with the master template as the first implementation example.
+
+All future non-legal pages must follow the same pattern.
 
 ## DEVELOPMENT PHASES
 
@@ -274,11 +372,9 @@ URL architecture finalized and locked. Non-legal pages use folder/index.html wit
 - Games
 - Promotions
 - Spin Crush APK
-- Help
 
 ### Phase 05 — Support
 - How to Install
-- Download Help
 - Contact Us
 
 ### Phase 06 — Legal
@@ -354,274 +450,226 @@ URL architecture finalized and locked. Non-legal pages use folder/index.html wit
 - **NOT done:** No demo games, iframes, UI, `/games/` page, navbar entries, or
   promotional claims have been added.
 
-## FUTURE GAMES CONTENT ARCHITECTURE — REVISED
+## GAMES ENTITY BLUEPRINT — FROZEN / AUTHORITATIVE
 
 STATUS:
-PLANNED / FUTURE — NOT IMPLEMENTED.
+FROZEN / AUTHORITATIVE
 
-The `/games/` page will serve as the main Spin Crush Games Collection / Games Hub.
+This Games taxonomy is the authoritative source of truth for all future
+internal-linking and entity-structure work on SPINCRUSH.US.
 
-The Games Hub should contain ALL verified and available game categories, not only the categories currently highlighted on the homepage.
+No entity, parent, or canonical URL in this blueprint may be changed
+without a documented blueprint revision. The taxonomy below overrides
+any generic definitions of casino, gambling, card games, dice games,
+lottery games, or board games.
 
-The homepage currently highlights representative categories:
+==================================================
+PURPOSE
+==================================================
 
-- Slots
-- Casino Games
-- Rummy
+The Games taxonomy defines the parent-child entity hierarchy for the
+Spin Crush Games Collection at /games/. It establishes:
 
-These are NOT the complete or final list of Spin Crush game categories.
+1. Which entities exist
+2. The parent-child relationship for each entity
+3. The canonical URL for every entity
+4. The internal-linking hierarchy for future implementation
 
-The `/games/` architecture must remain expandable based on the actual verified Spin Crush game inventory.
+==================================================
+AUTHORITATIVE GAMES ENTITY TABLE
+==================================================
 
-Conceptual structure:
+| Entity          | Parent        | Canonical URL |
+|----------------|---------------|---------------|
+| Casino Games   | Games         | /games/casino-games/ |
+| Roulette       | Casino Games  | /games/casino-games/roulette/ |
+| Blackjack      | Casino Games  | /games/casino-games/blackjack/ |
+| Baccarat       | Casino Games  | /games/casino-games/baccarat/ |
+| Poker          | Casino Games  | /games/casino-games/poker/ |
+| Sic Bo         | Casino Games  | /games/casino-games/sic-bo/ |
+| Teen Patti     | Casino Games  | /games/casino-games/teen-patti/ |
+| Andar Bahar    | Casino Games  | /games/casino-games/andar-bahar/ |
+| Dragon Tiger   | Casino Games  | /games/casino-games/dragon-tiger/ |
+| 7 Up Down      | Casino Games  | /games/casino-games/7-up-down/ |
+| Slots          | Games         | /games/slots/ |
+| Rummy          | Games         | /games/rummy/ |
+| Crash          | Games         | /games/crash/ |
+| Wingo Lottery  | Games         | /games/wingo-lottery/ |
+| Jhandi Munda   | Games         | /games/jhandi-munda/ |
+| Ludo           | Games         | /games/ludo/ |
+
+==================================================
+FINAL ENTITY HIERARCHY
+==================================================
+
+Games
+├── Casino Games
+│   ├── Roulette
+│   ├── Blackjack
+│   ├── Baccarat
+│   ├── Poker
+│   ├── Sic Bo
+│   ├── Teen Patti
+│   ├── Andar Bahar
+│   ├── Dragon Tiger
+│   └── 7 Up Down
+│
+├── Slots
+├── Rummy
+├── Crash
+├── Wingo Lottery
+├── Jhandi Munda
+└── Ludo
+
+==================================================
+NON-NEGOTIABLE TAXONOMY RULES
+==================================================
+
+1. Casino Games is a top-level child of Games.
+
+2. Roulette, Blackjack, Baccarat, Poker, Sic Bo, Teen Patti,
+   Andar Bahar, Dragon Tiger, and 7 Up Down are CHILDREN of
+   Casino Games.
+
+3. The canonical URLs for those nine casino games MUST remain
+   under:
+
+   /games/casino-games/
+
+4. Slots is NOT a child of Casino Games.
+   Slots is a direct child of Games:
+
+   /games/slots/
+
+5. Rummy is NOT a child of Casino Games.
+   Rummy is a direct child of Games:
+
+   /games/rummy/
+
+6. Crash is NOT a child of Casino Games.
+   Crash is a direct child of Games:
+
+   /games/crash/
+
+7. Wingo Lottery is a direct child of Games:
+
+   /games/wingo-lottery/
+
+8. Jhandi Munda is a direct child of Games:
+
+   /games/jhandi-munda/
+
+9. Ludo is a direct child of Games:
+
+   /games/ludo/
+
+10. Do NOT move Crash under Casino Games.
+
+11. Do NOT move Slots under Casino Games.
+
+12. Do NOT move Rummy under Casino Games.
+
+13. Do NOT flatten Casino Games children into direct children
+    of Games.
+
+14. Do NOT change any canonical URL in this blueprint.
+
+15. Do NOT infer taxonomy from generic definitions of casino,
+    gambling, card games, dice games, lottery games, or board games.
+    The blueprint above is the site's authoritative taxonomy.
+
+16. Do NOT use the existence or absence of an HTML page as a reason
+    to change this taxonomy.
+
+17. If a canonical page does not yet exist, mark it as:
+    "BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED"
+    rather than changing its parent or URL.
+
+==================================================
+INTERNAL LINKING RULE
+==================================================
+
+The blueprint establishes the following canonical relationship:
+
+Games
+→ Casino Games
+→ Casino Games child
+
+Therefore:
 
 /games/
-    ├── Slots
-    ├── Casino Games
-    ├── Rummy
-    ├── Other verified game categories
-    └── ...
+    → /games/casino-games/
+        → /games/casino-games/roulette/
+        → /games/casino-games/blackjack/
+        → /games/casino-games/baccarat/
+        → /games/casino-games/poker/
+        → /games/casino-games/sic-bo/
+        → /games/casino-games/teen-patti/
+        → /games/casino-games/andar-bahar/
+        → /games/casino-games/dragon-tiger/
+        → /games/casino-games/7-up-down/
+
+While Games-level entities remain:
 
-==================================================
-
-GAME CATEGORY PAGES
-
-==================================================
-
-When a game category has sufficient verified content and meaningful user/search intent, it may receive its own category page.
-
-Preferred URL pattern:
-
-`/games/{category}/`
-
-Examples:
-
-`/games/slots/`
-`/games/rummy/`
-`/games/casino/`
-
-Additional categories may be added later when verified.
-
-Do NOT assume that every future game category automatically requires its own page.
-
-Do NOT create category pages until the actual game inventory/content has been verified.
-
-==================================================
-
-ONE-PAGE CATEGORY CONTENT MODEL
-
-==================================================
-
-IMPORTANT ARCHITECTURE DECISION:
-
-Do NOT create separate `how-to-play`, `guide`, `features`, `game-types`, or similar subpages by default.
-
-Instead, each major game category should ideally have ONE concise category page that summarizes the important information in a structured and scannable way.
-
-Example:
-
-`/games/slots/`
-
-may contain:
-
-1. Introduction
-   - What are Slots?
-   - Short explanation of the category
-
-2. How Slots Work
-   - Brief general explanation of gameplay
-
-3. Types of Slots
-   - Short explanation of relevant slot formats/types
-
-4. Slot Features
-   - Brief explanation of relevant mechanics/features
-
-5. Available Slot Games
-   - Selected/verified game examples where applicable
-
-6. Short educational/gameplay information
-   - Only what is useful to users
-   - Avoid unnecessary long-form content
-
-7. APK CTA
-   - Guide users toward the Spin Crush APK where appropriate
-
-The same general content model can be adapted to other categories.
-
-Example:
-
-`/games/rummy/`
-
-may cover:
-- What is Rummy?
-- How Rummy works
-- Relevant Rummy variations
-- Basic gameplay concepts
-- Available/verified Rummy games
-- Short educational information
-- APK CTA
-
-Example:
-
-`/games/casino/`
-
-may cover:
-- What are Casino Games?
-- General explanation
-- Relevant casino game types
-- Short explanations of individual game types
-- Available/verified games
-- Basic gameplay information
-- APK CTA
-
-==================================================
-
-CONTENT LENGTH PRINCIPLE
-
-==================================================
-
-Category pages should NOT become long-form articles by default.
-
-The goal is:
-
-"One page that summarizes the category clearly."
-
-Content should be:
-- concise
-- scannable
-- useful
-- structured with clear sections
-- easy to understand on mobile
-- focused on user discovery
-
-Avoid unnecessarily long explanations.
-
-If a category can be explained effectively in several short sections, do not split it into multiple URLs.
-
-==================================================
-
-HOW-TO / GUIDE URL POLICY
-
-==================================================
-
-Do NOT create:
-
-`/games/{category}/how-to-play/`
-
-by default.
-
-Do NOT create:
-
-`/games/{category}/guide/`
-
-by default.
-
-Do NOT create multiple educational subpages simply to separate basic category information.
-
-The preferred architecture is to keep basic:
-- how it works
-- how to play
-- game types
-- mechanics
-- features
-
-inside the main category page:
-
-`/games/{category}/`
-
-A dedicated educational subpage should only be considered later if there is a strong, verified reason such as:
-- substantial unique educational content
-- clearly different search intent
-- significant content depth
-- genuine user need
-- SEO justification
-
-This must be decided individually rather than automatically.
-
-If a dedicated educational page is ever justified in the future, use:
-
-`/games/{category}/how-to-play/`
-
-as the preferred naming convention.
-
-Do NOT create both `/guide/` and `/how-to-play/` for the same intent.
-
-==================================================
-
-CONTENT VERIFICATION
-
-==================================================
-
-Before publishing category-specific information, verify:
-
-- Actual game categories
-- Actual game titles
-- Available game mechanics
-- Available features
-- Available variations
-- Whether games are actually available through Spin Crush
-- Licensing/permission where relevant
-- Whether game/demo content can be displayed
-- Accuracy of gameplay information
-
-Do not present generic game mechanics as confirmed Spin Crush features unless verified.
-
-Do not invent game titles, features, bonuses, payment methods, or availability claims.
-
-==================================================
-
-FUTURE INTERNAL LINKING
-
-==================================================
-
-The intended hierarchy is:
-
-Homepage
-    ↓
 /games/
-    ↓
-/games/{category}/
-    ↓
-APK conversion
-
-Example:
-
-Homepage
-→ Explore Spin Crush Games
-→ `/games/`
-
-`/games/`
-→ Slots
-→ `/games/slots/`
-
-`/games/slots/`
-→ Download Spin Crush APK
-→ `/spin-crush-apk/`
-
-The Games content should support discovery and understanding while the primary site conversion goal remains APK download.
+    → /games/slots/
+    → /games/rummy/
+    → /games/crash/
+    → /games/wingo-lottery/
+    → /games/jhandi-munda/
+    → /games/ludo/
 
 ==================================================
-
-ARCHITECTURE PRINCIPLE
-
+ENTITY COUNT VALIDATION
 ==================================================
 
-The future Games content architecture should prioritize:
+Total entities: 16
 
-ONE CATEGORY = ONE COMPREHENSIVE BUT CONCISE PAGE
+Breakdown:
+- Casino Games: 1
+- Casino Games children: 9
+  (Roulette, Blackjack, Baccarat, Poker, Sic Bo, Teen Patti,
+   Andar Bahar, Dragon Tiger, 7 Up Down)
+- Games-level entities: 6
+  (Slots, Rummy, Crash, Wingo Lottery, Jhandi Munda, Ludo)
 
-rather than:
+1 + 9 + 6 = 16
 
-ONE CATEGORY = MANY SMALL EDUCATIONAL PAGES
-
-The goal is to avoid unnecessary URL proliferation, duplicated content, thin pages, and excessive maintenance.
-
-Only create additional subpages when there is a strong content, user-intent, or SEO justification.
+Every entity appears exactly once.
+Every parent is correct.
+Every canonical URL is correct.
 
 ==================================================
+IMPLEMENTATION GAPS
+==================================================
 
-END FUTURE GAMES CONTENT ARCHITECTURE
+The following canonical pages have NOT yet been verified as existing:
+
+- /games/casino-games/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/roulette/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/blackjack/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/baccarat/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/poker/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/sic-bo/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/teen-patti/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/andar-bahar/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/dragon-tiger/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/casino-games/7-up-down/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/slots/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/rummy/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/crash/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/wingo-lottery/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/jhandi-munda/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+- /games/ludo/ (BLUEPRINT ENTITY — PAGE NOT YET IMPLEMENTED)
+
+These gaps are recorded for future implementation planning only.
+They do not constitute a request to create, modify, or infer
+production pages.
+
+==================================================
+END GAMES ENTITY BLUEPRINT
+
+==================================================
 
 ==================================================
 
@@ -813,8 +861,7 @@ B. Events & Prize Promotions
 - Lucky Wheel
 - Mystery Bonus
 
-C. Social & Referral Promotions
-- Social Media Promo Code
+C. Referral Promotions
 - Refer & Earn
 
 D. Cashback / Card Promotions
@@ -1053,30 +1100,6 @@ Do NOT invent:
 - timing
 - frequency
 - deposit requirements
-
-==================================================
-
-SOCIAL MEDIA PROMO CODE
-
-==================================================
-
-Title:
-Social Media Promo Code
-
-Confirmed details:
-
-- Follow Spin Crush on social media channels.
-- Get daily promo codes.
-- Get the latest promotions.
-- Get agent benefit tips.
-
-Do NOT invent:
-- exact social media platforms
-- posting schedules
-- exact promo code values
-- guaranteed daily availability
-
-unless separately confirmed.
 
 ==================================================
 

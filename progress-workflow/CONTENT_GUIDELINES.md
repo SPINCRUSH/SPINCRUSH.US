@@ -62,6 +62,44 @@ Do not create or claim the existence of:
 
 unless verified or explicitly provided later.
 
+## LANGUAGE SWITCHER
+
+The homepage language switcher is the **SINGLE SOURCE OF TRUTH** for all bilingual pages.
+
+Reference files:
+- `/index.html` for English pages
+- `/hi/index.html` for Hindi pages
+
+**ABSOLUTE RULES:**
+
+1. **Visual order is ALWAYS `EN | HI` on every page.** Never reverse the order on Hindi pages.
+2. **Never use `IN` as a visible language label.** `IN` belongs only to the locale/region value:
+   - English locale → `en-IN`
+   - Hindi locale → `hi-IN`
+3. **Only the active/current state changes** between English and Hindi pages.
+4. **Copy the language switcher structure exactly** from the corresponding homepage. Keep the same HTML structure, CSS classes, styling, accessibility attributes, and behavior.
+5. **Only change the `href` targets** so they point to the equivalent language version of the current page.
+6. **Do not infer or redesign** the switcher based on `en-IN` / `hi-IN`.
+
+Required visible labels:
+- English → `EN`
+- Hindi → `HI`
+
+Required switcher order (same on all pages):
+- `EN | HI`
+
+Active state:
+- English page → `EN` is active, `HI` links to `/hi/...`
+- Hindi page → `HI` is active, `EN` links to `/...`
+
+Examples:
+- `/games/` → `EN | HI` (EN active)
+- `/hi/games/` → `EN | HI` (HI active)
+- `/promotions/` → `EN | HI` (EN active)
+- `/hi/promotions/` → `EN | HI` (HI active)
+
+This rule applies to every current and future bilingual page. The homepage switcher is the only reference. Do not create alternative patterns.
+
 ## LEGAL PAGES
 
 - Legal pages (`/privacy.html`, `/terms.html`, `/disclaimer.html`, `/contact.html`) are **FINAL / LOCKED**.
