@@ -744,3 +744,36 @@ html {
 | 2026-08-14 | Added hidden utility class for promo-code.js | assets/css/style.css | Phase 04 — Core Pages (COMPLETE) | Required by promo-code.js |
 | 2026-08-14 | Updated footer across all pages | all HTML files | Phase 02 — Global UI (COMPLETE / LOCKED) | Help column removed; Contact added to legal pages |
 | 2026-08-14 | Updated legal pages with full SEO and structured data | privacy.html, terms.html, disclaimer.html, contact.html | Phase 07 — Legal (COMPLETE / LOCKED) | Legal pages fully synchronized with master template |
+| 2026-08-20 | Localization audit of HI casino game pages | audit-report-hi-en-casino-games.md, FINAL_AUDIT_REPORT.md | Phase 09 — Hindi | Comprehensive EN↔HI parity audit completed for all 9 casino game pages; identified navbar, H1, breadcrumb, aria-label, footer, title, image alt, and structural inconsistencies |
+| 2026-08-20 | Added floating mobile APK CTA button | assets/css/style.css, 404.html, contact.html, disclaimer.html, index.html, privacy.html, promo-code/index.html, promotions/index.html, spin-crush-apk/index.html, terms.html, games/casino-games/blackjack/index.html, games/casino-games/index.html, games/casino-games/roulette/index.html, games/index.html, hi/*.html, hi/games/*.html, hi/games/casino-games/*.html | Phase 05 — APK / Conversion | Persistent `.floating-apk-btn` (fixed, bottom-center, visible on mobile only) added to all pages for APK conversion; CSS defined with hover/focus/reduced-motion support |
+| 2026-08-20 | Localized Hindi homepage, legal, content, and casino-games index pages | hi/index.html, hi/privacy.html, hi/terms.html, hi/disclaimer.html, hi/contact.html, hi/games/index.html, hi/games/casino-games/index.html, hi/promotions/index.html, hi/promo-code/index.html, hi/spin-crush-apk/index.html | Phase 09 — Hindi | Title, meta description, OG, Twitter, JSON-LD WebSite/Organization/WebPage name and description, areaServed, and breadcrumb translated/localized from English to Hindi; language switcher enabled; hreflang wired |
+| 2026-08-21 | Fixed Dragon Tiger navbar Promotions label | hi/games/casino-games/dragon-tiger/index.html | Phase 02 — Global UI | Navbar label `ऑफर` → `प्रचार` to match the other 8 HI game pages; href `/hi/promotions/` unchanged |
+| 2026-08-21 | Standardized Hindi SEO title/naming pattern | hi/games/casino-games/7-up-down/index.html, andar-bahar/index.html, baccarat/index.html, blackjack/index.html, dragon-tiger/index.html, poker/index.html, roulette/index.html, sic-bo/index.html, teen-patti/index.html | Phase 08 — SEO / Phase 09 — Hindi | Changed page-title pattern from `{Game} पर Spin Crush` to `{Game} on Spin Crush` across `<title>`, H1, meta description, og:title, og:description, twitter:title, twitter:description, and JSON-LD WebPage name/description on all 9 HI casino game pages; game names preserved as protected English terms |
+
+---
+
+## Navbar Consistency Audit (2026-08-21)
+
+**Scope:** Read-only audit of navbar across all 9 HI casino game pages.
+
+**Finding:** 8 of 9 HI game pages use the nav label `प्रचार` for the Promotions link (`/hi/promotions/`). Dragon Tiger used `ऑफर` — an inconsistency.
+
+**Resolution:** Dragon Tiger navbar label corrected to `प्रचार` to match the established majority pattern. All other navbar fields (header structure, logo href/aria-label, nav item order, mobile toggle, language switcher, hreflang/lang attributes, active state, accessibility attributes) were already identical.
+
+---
+
+## Hindi Localization Pattern (2026-08-21)
+
+**Scope:** SEO title/naming consistency across all 9 HI casino game pages.
+
+**Finding:** All pages used `{Game Name} पर Spin Crush` in title tags, H1, OG/Twitter metadata, and JSON-LD schema fields. To align Hindi SEO titles with the established English pattern (`{Game} on Spin Crush`), the Hindi `पर` particle was replaced with the English `on` in the standardized title format; game names remain as protected English terms.
+
+**Resolution:** Changed `{Game Name} पर Spin Crush` → `{Game Name} on Spin Crush` on all 9 HI game pages across all metadata fields. Protected terminology (7 Up Down, Andar Bahar, Baccarat, Blackjack, Dragon Tiger, Poker, Roulette, Sic Bo, Teen Patti, Spin Crush) preserved unchanged.
+
+---
+
+## Floating Mobile APK CTA (2026-08-20)
+
+**Scope:** Persistent APK download CTA across all pages.
+
+**Implementation:** Added `.floating-apk-btn` CSS class (fixed positioning, bottom-center, z-index 200, visible only on `max-width: 767px`) and corresponding `<a>` markup on all EN and HI pages including 404. The button links to `/assets/downloads/spincrush.apk` with `rel="nofollow"` and an accessible `aria-label="Download Spin Crush APK"`.
